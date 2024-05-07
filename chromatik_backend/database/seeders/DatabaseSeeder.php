@@ -62,10 +62,10 @@ class DatabaseSeeder extends Seeder
 
         // Je crée un utilisateur avec le rôle admin
         $userAdmin = User::factory()->create([
-            'name' => 'Stucki',
-            'first_name' => 'Floran',
+            'name' => 'Admin',
+            'first_name' => 'Admin',
             'phone_number' => '+41791234567',
-            'email' => 'stucki.floran@gmail.com',
+            'email' => 'admin.example@gmail.com',
             'password' => bcrypt('admin')
         ]);
         $userAdmin->syncRoles($roleManage);

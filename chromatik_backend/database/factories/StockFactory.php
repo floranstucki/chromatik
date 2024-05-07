@@ -20,7 +20,7 @@ class StockFactory extends Factory
             'supply' => $this->faker->name(),
             'brand' => $this->faker->company(),
             'type' => $this->faker->word(),
-            'price' => $this->faker->randomFloat(2, 0, 1000),
+            'price' => $this->faker->randomFloat(2, 0, 50),
             'quantity' => $this->faker->numberBetween(0, 100)
         ];
     }

@@ -35,7 +35,7 @@ class StockService{
                 'supply' => 'required|string|max:255',
                 'brand' => 'required|string|max:255',
                 'type' => 'required|string|max:255',
-                'price' => 'required|numeric',
+                'price' => 'required|numeric|max',
                 'quantity' => 'required|integer',
                 'supplier_id' => 'required|integer'
             ]);

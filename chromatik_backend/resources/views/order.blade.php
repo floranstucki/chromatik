@@ -53,7 +53,8 @@
                     <th>Supply</th>
                     <th>Brand</th>
                     <th>Quantity</th>
-                    <th>Price</th>
+                    <th>Price per item</th>
+                    <th>Total</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,6 +68,7 @@
                         <td>{{ $stock->brand }}</td>
                         <td>{{ $cmd['quantity'] }}</td>
                         <td>{{ $stock->price }}</td>
+                        <td>{{ $cmd['quantity'] * $stock->price }}</td>
                     </tr>
                 @endforeach
             </tbody>
