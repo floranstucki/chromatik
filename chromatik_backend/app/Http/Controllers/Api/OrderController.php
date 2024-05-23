@@ -16,7 +16,7 @@ class OrderController extends Controller{
             if($order->isEmpty()){
                 return response()->json(['message' => 'No orders found'], 404);
             }
-            return OrderResource::collection($order);
+            return OrderResource::collection($order)->collection;
         } catch (\Exception $e) {
             throw $e;
         }
@@ -26,11 +26,13 @@ class OrderController extends Controller{
     {
         try {
             $order= $this->_orderService->getOrderById($id);
-            return OrderResource::collection($order);
+            return OrderResource::make($order)->resource;
         } catch (\Exception $e) {
             throw $e;
         }
     }
+
+    
 
     public function store(Request $request)
     {

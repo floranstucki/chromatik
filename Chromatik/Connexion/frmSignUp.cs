@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Chromatik.Classes.Token;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,31 +45,29 @@ namespace Chromatik
         /// <param name="e"></param>
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string _name = tbxName.Text;
-            string _firstName = tbxFirstName.Text;
-            string _telephone= tbxTelephone.Text;
-            string _password = tbxPassword.Text;
-            string _confirmPassword= tbxConfirmation.Text;
-            string _email = tbxEmail.Text;
-
-            
-
-            if (_name == "" || _firstName == "" || _telephone == "" || _password == "" || _confirmPassword == "" ||  _email == "")
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://127.0.0.1:8000/api/");
+            string contentType = "application/json";
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(contentType));
+            var consumeApi = client.PostAsJsonAsync("register", new { 
+                name = tbxName.Text, 
+                first_name = tbxFirstName.Text,
+                phone_number = tbxTelephone.Text,
+                email = tbxEmail.Text,
+                password = tbxPassword.Text,
+                c_password = tbxConfirmation.Text
+               
+            });
+            consumeApi.Wait();
+            var data = consumeApi.Result;
+            if (data.IsSuccessStatusCode)
             {
-                MessageBox.Show("Please fill in all fields","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("User registered successfully", "Success !");
+                this.Close();
             }
-            else if (_password != _confirmPassword)
-            {
-                MessageBox.Show("Passwords not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (_password.Length < 8)
-            {
-                MessageBox.Show("Password must be at least 8 characters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-           
             else
             {
-                RegisterUser(_name, _firstName, _telephone, _password, _email);
+                MessageBox.Show("Error while register User", "Error !");
             }
         }
         /// <summary>
@@ -79,10 +81,6 @@ namespace Chromatik
             {
                 e.Handled = true;
             }
-        }
-        private async void RegisterUser(string name, string firstname, string tel, string password, string email)
-        {
-
         }
     }
 }

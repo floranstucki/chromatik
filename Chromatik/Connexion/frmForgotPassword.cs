@@ -15,30 +15,11 @@ namespace Chromatik
         public frmForgotPassword(string _username)
         {
             InitializeComponent();
-            tbxUsername.Text = _username;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            if (tbxUsername.Text == "" || tbxPassword.Text == "" || tbxConfirmation.Text == "")
-            {
-                MessageBox.Show("Please enter all your informations.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (tbxUsername.Text != "" && tbxPassword.Text == tbxConfirmation.Text)
-                {
-
-                    MessageBox.Show("Your password has been reset.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("Passwords not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
-            }
-
+           MessageBox.Show("Under Construction !!", "Warining", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

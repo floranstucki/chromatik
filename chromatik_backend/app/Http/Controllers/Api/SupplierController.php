@@ -13,7 +13,7 @@ class SupplierController extends Controller{
     {
         try {
             $suppliers = $this->_supplierService->getSuppliers();
-            return SupplierResource::collection($suppliers);
+            return SupplierResource::collection($suppliers)->collection;
         } catch (\Exception $e) {
             throw $e;
         }
@@ -23,7 +23,7 @@ class SupplierController extends Controller{
     {
         try {
             $supplier =  $this->_supplierService->getSupplierById($id);
-            return SupplierResource::collection($supplier);
+            return SupplierResource::make($supplier)->resource;
         } catch (\Exception $e) {
             throw $e;
         }
@@ -46,7 +46,7 @@ class SupplierController extends Controller{
             if ($supplier == null) {
                 return response()->json(['message' => 'Supplier not found'], 404);
             }
-            return response()->json(['message' => 'Supplier updated successfully', 'supplier' => $supplier]);
+            return new SupplierResource($supplier);
         } catch (\Exception $e) {
             throw $e;
         }

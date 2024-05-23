@@ -54,10 +54,9 @@ class DatabaseSeeder extends Seeder
 
         $permDeleteStock = Permission::create(['name' => 'delete stock']);
         $permDeleteSupplier = Permission::create(['name' => 'delete suppliers']);
-        $permDeleteOrder = Permission::create(['name' => 'delete order']);
         $permDeleteUser = Permission::create(['name' => 'delete user']);
 
-        $roleManage->syncPermissions([$permDeleteStock, $permDeleteSupplier, $permDeleteOrder, $permDeleteUser, $permUpdateStock, $permUpdateSupplier, $permUpdateOrder, $permCreateStock, $permCreateSupplier]);
+        $roleManage->syncPermissions([$permDeleteStock, $permDeleteSupplier, $permDeleteUser, $permUpdateStock, $permUpdateSupplier, $permUpdateOrder, $permCreateStock, $permCreateSupplier]);
 
 
         // Je crée un utilisateur avec le rôle admin

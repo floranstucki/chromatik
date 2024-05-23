@@ -15,7 +15,7 @@ class StockController extends Controller{
             if($stock->isEmpty()){
                 return response()->json(['message' => 'No stock found'], 404);
             }
-            return StockResource::collection($stock);
+            return StockResource::collection($stock)->collection;
         } catch (\Exception $e) {
             throw $e;
         }
@@ -25,7 +25,7 @@ class StockController extends Controller{
     {
         try {
             $stock = $this->_stockService->getStockById($id);
-            return StockResource::collection($stock);
+            return StockResource::make($stock)->resource;
         } catch (\Exception $e) {
             throw $e;
         }
@@ -48,7 +48,7 @@ class StockController extends Controller{
             if ($stock == null) {
                 return response()->json(['message' => 'Stock not found'], 404);
             }
-            return response()->json(['message' => 'Stock updated successfully', 'stock' => $stock]);
+            return new StockResource($stock) ;
         } catch (\Exception $e) {
             throw $e;
         }

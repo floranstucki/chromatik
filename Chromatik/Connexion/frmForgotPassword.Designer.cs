@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
+            this.lblWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbxConfirmation
@@ -96,6 +97,7 @@
             // btnReset
             // 
             this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.Enabled = false;
             this.btnReset.Location = new System.Drawing.Point(164, 200);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(100, 23);
@@ -104,12 +106,23 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // lblWarning
+            // 
+            this.lblWarning.AutoSize = true;
+            this.lblWarning.ForeColor = System.Drawing.Color.Red;
+            this.lblWarning.Location = new System.Drawing.Point(158, 173);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(106, 13);
+            this.lblWarning.TabIndex = 17;
+            this.lblWarning.Text = "Under construction !!\r\n";
+            // 
             // frmForgotPassword
             // 
             this.AcceptButton = this.btnReset;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 254);
+            this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.tbxConfirmation);
             this.Controls.Add(this.tbxPassword);
@@ -136,5 +149,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Label lblWarning;
     }
 }

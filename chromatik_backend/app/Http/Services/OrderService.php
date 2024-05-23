@@ -24,8 +24,11 @@ class OrderService{
      * @return Order
      */
     public function getOrderById(int $id) {
-        return Order::find($id);
+        return Order::findOrFail($id);
     }
+
+  
+    
     
     /**
      * Store a new order
@@ -92,12 +95,5 @@ class OrderService{
      * @param $id the id of the order
      * @return bool | null
      */
-    public function deleteOrder(int $id){
-        $order = $this->getOrderById($id);
-        if($order == null){
-            return null;
-        }
-        return $order->delete();
-        
-    }
+
 }

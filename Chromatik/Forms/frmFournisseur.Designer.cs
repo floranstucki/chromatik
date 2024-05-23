@@ -93,7 +93,7 @@
             this.btnAjouter.Location = new System.Drawing.Point(271, 291);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(239, 23);
-            this.btnAjouter.TabIndex = 5;
+            this.btnAjouter.TabIndex = 6;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
@@ -139,10 +139,10 @@
             // tbxEmail
             // 
             this.tbxEmail.Location = new System.Drawing.Point(520, 218);
-            this.tbxEmail.MaxLength = 5;
+            this.tbxEmail.MaxLength = 50;
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(144, 20);
-            this.tbxEmail.TabIndex = 6;
+            this.tbxEmail.TabIndex = 5;
             // 
             // lblEmail
             // 

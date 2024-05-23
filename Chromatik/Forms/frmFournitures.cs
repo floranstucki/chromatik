@@ -1,116 +1,51 @@
-﻿using System;
+﻿using Chromatik.Classes;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
+using System.Net.Http;
 using System.Windows.Forms;
+using Chromatik.Classes.Token;
 
 namespace Chromatik.Forms
 {
+    
     public partial class frmFournitures : Form
     {
-        List<Tuple<string, string, string, double>> lstFourniture = new List<Tuple<string, string, string, double>>
-        {
-            new Tuple<string, string,string, double>("Gomme", "Fabercastell", "Blanche",2.5),
-            new Tuple<string, string,string, double>("Crayon", "Caran d'ache", "Couleurs", 5.5),
-            new Tuple<string, string,string, double>("Stylo", "BIC","Bleu", 1.5),
-            new Tuple<string, string,string, double>("Peinture Aquarelle", "Caran d'Ache","Bleu", 12.5),
-            new Tuple<string, string,string, double>("Toile en Lin", "Caran d'Ache","beige", 8.5)
-        };
-        bool _isAdmin = true;
+        private Dictionary<int, frmDetailsFourniture> detailCommandeMap;
+
         public frmFournitures()
         {
             InitializeComponent();
-            RemplirDataGridView();
-            if (_isAdmin)
-            {
-                btnAjouter.Visible = true;
-            }
+            InitializeDataGridView();
+            detailCommandeMap = new Dictionary<int, frmDetailsFourniture>();
+            Async();
+    
         }
-
-        private void RemplirDataGridView()
+        private void InitializeDataGridView()
         {
-            // Ajouter des colonnes au DataGridView
-            dgvFournitures.Columns.Add("Fourniture", "Fourniture");
-            dgvFournitures.Columns.Add("Marque", "Marque");
-            dgvFournitures.Columns.Add("Couleur", "Couleur");
-            dgvFournitures.Columns.Add("Prix", "Prix");
-            DataGridViewLinkColumn detailsColumn = new DataGridViewLinkColumn() { Name = "Détails", HeaderText = "Détails de la fourniture" };
-            dgvFournitures.Columns.Add(detailsColumn);
-
-            if(_isAdmin)
-            {
-                DataGridViewLinkColumn updateColumn = new DataGridViewLinkColumn() { Name = "Modifier", HeaderText = "Modifier la fourniture" };
-                DataGridViewLinkColumn deleteColumn = new DataGridViewLinkColumn() { Name = "Supprimer", HeaderText = "Supprimer la fourniture" };
-
-                dgvFournitures.Columns.Add(updateColumn);
-                dgvFournitures.Columns.Add(deleteColumn);
-            }
-            
-
-            // Définir AutoSizeColumnsMode sur Fill pour remplir automatiquement l'espace disponible
-            dgvFournitures.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            // Ajouter des données à partir du code
-            foreach (var fourniture in lstFourniture)
-            {
-                if (_isAdmin)
-                {
-                    AjouterLigne(fourniture.Item1, fourniture.Item2, fourniture.Item3, fourniture.Item4, new frmDetailsFourniture(fourniture), new frmUpdateStock(fourniture));
-                }
-                else {
-                    AjouterLigne(fourniture.Item1, fourniture.Item2, fourniture.Item3, fourniture.Item4, new frmDetailsFourniture(fourniture), new frmUpdateStock(null));
-                }           
-                
-            }
+            // Ajoutez une colonne de lien
+            DataGridViewLinkColumn detailsColumn = new DataGridViewLinkColumn();
+            detailsColumn.Name = "DetailsStock";
+            detailsColumn.HeaderText = "Détails";
+            detailsColumn.Text = "Voir Détails";
+            detailsColumn.UseColumnTextForLinkValue = true;
+            dgvStock.Columns.Add(detailsColumn);
         }
-
-        private void AjouterLigne(string fourniture, string marque, string couleur, double prix, frmDetailsFourniture frm, frmUpdateStock frmU)
-        {
-            // Ajouter une ligne au DataGridView
-            int indexLigne = dgvFournitures.Rows.Add(fourniture, marque, couleur, prix);
-
-            // Ajouter l'objet frm à la colonne "Détails" de la ligne ajoutée
-            dgvFournitures.Rows[indexLigne].Cells["Détails"].Tag = frm;
-            if (_isAdmin)
-            {
-                dgvFournitures.Rows[indexLigne].Cells["Modifier"].Tag = frmU; // Assurez-vous que frmUpdateStock est correctement passé ici
-            }
-
-            // Définir le texte du lien
-            dgvFournitures.Rows[indexLigne].Cells["Détails"].Value = "Voir les détails";
-            if(_isAdmin)
-            {
-                dgvFournitures.Rows[indexLigne].Cells["Modifier"].Value = "Modifier";
-                dgvFournitures.Rows[indexLigne].Cells["Supprimer"].Value = "Supprimer";
-            }
-            
-        }
-
-
         private void dgvFournitures_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvStock.Columns["DetailsStock"].Index && e.RowIndex >= 0)
             {
-                DataGridViewCell cell = dgvFournitures.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                int stockId = Convert.ToInt32(dgvStock.Rows[e.RowIndex].Cells["stock_id"].Value);
 
-                // Vérifier si le clic est sur la colonne "Détails"
-                if (cell.OwningColumn.Name == "Détails")
+                frmDetailsFourniture detailCommandeForm;
+                if (!detailCommandeMap.TryGetValue(stockId, out detailCommandeForm))
                 {
-                    frmDetailsFourniture frm = cell.Tag as frmDetailsFourniture;
-                    frm?.Show();
+                    detailCommandeForm = new frmDetailsFourniture(stockId);
+                    detailCommandeMap[stockId] = detailCommandeForm;
                 }
-                // Vérifier si le clic est sur la colonne "Supprimer"
-                else if (cell.OwningColumn.Name == "Modifier")
-                {
-                    frmUpdateStock frm = cell.Tag as frmUpdateStock;
-                    frm?.Show();
-                }
-                else
-                {
-                    // Supprimer
-                    if (MessageBox.Show("Voulez-vous vraiment supprimer cette fourniture ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        dgvFournitures.Rows.RemoveAt(e.RowIndex);
-                    }
-                }
+
+                detailCommandeForm.Show();
             }
         }
 
@@ -118,6 +53,33 @@ namespace Chromatik.Forms
         {
             frmStock frm = new frmStock();
             frm.ShowDialog();
+        }
+        public void Async()
+        {
+            try
+            {
+                IEnumerable<Stock> stock = null;
+                HttpClient client = new HttpClient();
+                string contentType = "application/json";
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(contentType));
+                client.DefaultRequestHeaders.Add("Authorization", String.Format("Bearer {0}", Storage.token)); //si on veut ajouter le token dans le header
+                client.BaseAddress = new Uri("http://localhost:8000/api/");
+                var consumeApi = client.GetAsync("stock");
+                consumeApi.Wait();
+                var data = consumeApi.Result;
+
+                if (data.IsSuccessStatusCode)
+                {
+                    var response = data.Content.ReadAsStringAsync();
+                    response.Wait();
+                    stock = JsonConvert.DeserializeObject<IList<Stock>>(response.Result);
+                    dgvStock.DataSource = stock;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

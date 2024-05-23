@@ -9,8 +9,8 @@ class Favorite extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'stock_id'];
-    protected $hidden = ['created_at','updated_at'];
+    protected $fillable = ['user_id', 'stock_id','created_at'];
+    protected $hidden = ['updated_at'];
 
     public function user(){
         return $this->belongsTo(User::class);

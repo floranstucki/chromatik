@@ -5,10 +5,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using Chromatik.Classes.Token;
 
 namespace Chromatik.MDI
 {
@@ -19,7 +23,6 @@ namespace Chromatik.MDI
         public mdiChromatik()
         {
             InitializeComponent();
-            checkAdmin();
             frm.ShowDialog();
             
         }
@@ -54,8 +57,8 @@ namespace Chromatik.MDI
 
         private void tsmiUtilisateurLogOut_Click(object sender, EventArgs e)
         {
-            Properties.Resources.token = null;
-            Application.Restart();
+            Storage.setToken(null);
+            Storage.setUser(null);
         }
         private void tsmiAjouterStock_Click(object sender, EventArgs e)
         {
@@ -111,6 +114,8 @@ namespace Chromatik.MDI
         private void tsmiQuitterFermer_Click(object sender, EventArgs e)
         {
             Application.Exit(); // permet de fermer l'application
+            Storage.setToken(null);
+            Storage.setUser(null);
         }
 
         public void checkAdmin()
@@ -130,6 +135,33 @@ namespace Chromatik.MDI
                 tsmiAjouterFournisseur.Visible = false;
                 tssAjouter.Visible = false;
                 tssOuvrir.Visible = false;
+            }
+        }
+
+        private void mdiChromatik_Activated(object sender, EventArgs e)
+        {
+            try { 
+            IEnumerable<User> user = new List<User>();
+            HttpClient client = new HttpClient();
+            string contentType = "application/json";
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(contentType));
+                client.DefaultRequestHeaders.Add("Authorization", String.Format("Bearer {0}", Storage.token));
+                client.BaseAddress = new Uri("http://localhost:8000/api/");
+            var consumeApi = client.GetAsync("user");
+            consumeApi.Wait();
+            var data = consumeApi.Result;
+
+            if (data.IsSuccessStatusCode)
+            {
+                var response = data.Content.ReadAsStringAsync();
+                response.Wait();
+                var users = JsonConvert.DeserializeObject<IEnumerable<User>>(response.Result);
+
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Chromatik.Classes;
+using Chromatik.Classes.Token;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -11,86 +15,94 @@ namespace Chromatik.Forms
     public partial class frmListCommandes : Form
     {
         private Dictionary<int, frmDetailCommande> detailCommandeMap;
-
+        private int id;
         public frmListCommandes()
         {
             InitializeComponent();
+            id = Storage.getUser().Id;
+            Async();
             detailCommandeMap = new Dictionary<int, frmDetailCommande>();
-            //RemplirDataGridView();
+            dgvOrder.CellContentClick += dgvCommande_CellContentClick;
 
         }
-        private void RemplirDataGridView(string response) {
-            dgvCommande.Columns.Add("DateCommande", "Date de commande");
-            dgvCommande.Columns.Add("NoCommande", "Numéro de commande");
-            dgvCommande.Columns.Add(new DataGridViewLinkColumn() { Name = "DetailsCommande", HeaderText = "Détails de la commande" });
-            dgvCommande.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            
-            String[] strings = response.Split(',');
-            for (int i = 0; i < strings.Length; i++)
-            {
-                String[] values = strings[i].Split(',');
-                AjouterLigne(DateTime.Parse(values[0]), int.Parse(values[1]), new frmDetailCommande(int.Parse(values[1])));
-            }
-        }
 
-        private void AjouterLigne(DateTime valeurColonne1, int valeurColonne2, frmDetailCommande valeurColonne3)
+        private void InitializeDataGridView()
         {
-            int indexLigne = dgvCommande.Rows.Add(valeurColonne1, valeurColonne2, "Détails");
-
-            detailCommandeMap[indexLigne] = valeurColonne3;
+            // Ajoutez une colonne de lien
+            DataGridViewLinkColumn detailsColumn = new DataGridViewLinkColumn();
+            detailsColumn.Name = "DetailsCommande";
+            detailsColumn.HeaderText = "Détails";
+            detailsColumn.Text = "Voir Détails";
+            detailsColumn.UseColumnTextForLinkValue = true;
+            dgvOrder.Columns.Add(detailsColumn);
         }
-
 
         private void dgvCommande_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgvCommande.Columns["DetailsCommande"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvOrder.Columns["DetailsCommande"].Index && e.RowIndex >= 0)
             {
+                // Obtenez l'ID de la commande à partir de la ligne cliquée
+                int orderId = Convert.ToInt32(dgvOrder.Rows[e.RowIndex].Cells["order_id"].Value);
+
                 frmDetailCommande detailCommandeForm;
-                if (detailCommandeMap.TryGetValue(e.RowIndex, out detailCommandeForm))
+                if (!detailCommandeMap.TryGetValue(orderId, out detailCommandeForm))
                 {
-                    detailCommandeForm?.Show();
+                    // Si le formulaire de détail n'existe pas dans le dictionnaire, créez-en un nouveau
+                    detailCommandeForm = new frmDetailCommande(orderId);
+                    detailCommandeMap[orderId] = detailCommandeForm;
                 }
+
+                detailCommandeForm.Show();
             }
         }
 
         private void dgvCommande_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataGridViewColumn clickedColumn = dgvCommande.Columns[e.ColumnIndex];
+            DataGridViewColumn clickedColumn = dgvOrder.Columns[e.ColumnIndex];
 
-            dgvCommande.Sort(clickedColumn, ListSortDirection.Ascending);
+            dgvOrder.Sort(clickedColumn, ListSortDirection.Ascending);
 
         }
 
-        private async void frmListCommandes_Load(object sender, EventArgs e)
+        public void Async()
         {
-            using (var client = new HttpClient())
+            try
             {
-                try
+                IEnumerable<Order> order = null;
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("http://localhost:8000/api/");
+                string contentType = "application/json";
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(contentType));
+                client.DefaultRequestHeaders.Add("Authorization", String.Format("Bearer {0}", Storage.token));
+                var consumeApi = client.GetAsync($"users/{id}/orders");
+                consumeApi.Wait();
+                var data = consumeApi.Result;
+
+                if (data.IsSuccessStatusCode)
                 {
-                    client.BaseAddress = new Uri(Properties.Resources.baseURL);
+                    InitializeDataGridView();
+                    var response = data.Content.ReadAsStringAsync();
+                    response.Wait();
 
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                    order = JsonConvert.DeserializeObject<IList<Order>>(response.Result);
 
-                    HttpResponseMessage response = await client.GetAsync("/orders");
+                    dgvOrder.DataSource = order;
 
-                    if (response.IsSuccessStatusCode)
+                    // Assurez-vous que la colonne ID de la commande est incluse dans le DataGridView
+                    if (!dgvOrder.Columns.Contains("order_id"))
                     {
-                        string responseBody = await response.Content.ReadAsStringAsync();
-
-                        MessageBox.Show(responseBody, "Données reçues", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        RemplirDataGridView(responseBody);
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Erreur : {response.StatusCode}", "Erreur de requête", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        dgvOrder.Columns.Add("OrderId", "ID de la Commande");
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Une erreur s'est produite : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else { 
+                    MessageBox.Show("Vous n'avez aucune commande !");
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
     }
 }

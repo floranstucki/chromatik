@@ -29,7 +29,7 @@ class CartController extends Controller{
     {
         try {
             $cart = $this->_cartService->getCartById($id);
-            return CartResource::collection($cart);
+            return CartResource::make($cart)->resource;
         } catch (\Exception $e) {
             throw $e;
         }
@@ -41,7 +41,8 @@ class CartController extends Controller{
     public function findByUserId(int $id)
     {
         try {
-            return $this->_cartService->getCartByUserId($id);
+            $cart = $this->_cartService->getCartByUserId($id);
+            return CartResource::make($cart)->resource;
         } catch (\Exception $e) {
             throw $e;
         }

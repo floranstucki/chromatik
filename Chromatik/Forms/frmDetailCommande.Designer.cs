@@ -49,9 +49,9 @@
             this.lblDateCommande.AutoSize = true;
             this.lblDateCommande.Location = new System.Drawing.Point(304, 117);
             this.lblDateCommande.Name = "lblDateCommande";
-            this.lblDateCommande.Size = new System.Drawing.Size(114, 13);
+            this.lblDateCommande.Size = new System.Drawing.Size(117, 13);
             this.lblDateCommande.TabIndex = 1;
-            this.lblDateCommande.Text = "Commande passée le :";
+            this.lblDateCommande.Text = "Commande passée le : ";
             // 
             // tbxCommande
             // 
@@ -87,7 +87,6 @@
             this.MinimizeBox = false;
             this.Name = "frmDetailCommande";
             this.Text = "Detail de la commande";
-            this.Load += new System.EventHandler(this.frmDetailCommande_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

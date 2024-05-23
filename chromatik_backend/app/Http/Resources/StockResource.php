@@ -14,7 +14,9 @@ class StockResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        if ($this->resource){
         return [
+            'stock_id' => $this->stock_id,
             'supply' => $this->supply,
             'brand' => $this->brand,
             'type' => $this->type,
@@ -22,5 +24,7 @@ class StockResource extends JsonResource
             'quantity' => $this->quantity,
             'supplier_id' => $this->supplier_id
         ];
+    }
+    return [];
     }
 }

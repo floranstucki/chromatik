@@ -14,9 +14,13 @@ class FavoriteResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+     if($this->resource){
         return [
             'user_id' => $this->user_id,
-            'stock_id' => $this->stock_id
+            'stock_id' => $this->stock_id,
+            'date' => $this->created_at
         ];
+        }
+        return [];
     }
 }

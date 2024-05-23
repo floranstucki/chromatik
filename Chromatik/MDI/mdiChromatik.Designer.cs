@@ -242,6 +242,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Interface Utilisateur";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.mdiChromatik_Activated);
             this.mnsMDI.ResumeLayout(false);
             this.mnsMDI.PerformLayout();
             this.ResumeLayout(false);

@@ -17,6 +17,7 @@ class OrderResource extends JsonResource
         //return parent::toArray($request);
         if ($this->resource) {
             return [
+                'order_id'=> $this->order_id,
                 'date' => $this->date,
                 'status' => $this->status,
                 'command' => $this->command,

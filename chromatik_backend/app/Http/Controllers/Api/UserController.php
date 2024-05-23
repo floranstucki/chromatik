@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\FavoriteResource;
+use App\Http\Resources\OrderResource;
 use Illuminate\Http\Request;
 use App\Http\Resources\UserResource;
 use App\Http\Services\UserService;
 class UserController extends Controller{
     public function __construct(private UserService $_userService){}
-
     public function index(){
         try {
             $users= $this->_userService->getUsers();
             if($users->isEmpty()){
                 return response()->json(['message' => 'No users found', 'code' => 404 ]);
             }
-            return UserResource::collection($users);
+            return UserResource::collection($users)->collection;
         } catch (\Exception $e) {
             throw $e;
         }
@@ -22,7 +23,7 @@ class UserController extends Controller{
     public function show(int $id){
         try {
             $user= $this->_userService->getUserById($id);
-            return UserResource::collection($user);
+            return UserResource::make($user)->resource;
         } catch (\Exception $e) {
             throw $e;
         }
@@ -31,15 +32,14 @@ class UserController extends Controller{
         try {
             $this->_userService->updateUser($request, $id);
             $user = $this->_userService->getUserById($id);
-            return ['message' => 'User updated successfully', 'user' => new UserResource($user), 'code' => 200];
+            return new UserResource($user);
         } catch (\Exception $e) {
             throw $e;
         }
     }
     public function destroy(int $id){
         try {
-            $this->_userService->deleteUser($id);
-            return ['message' => 'User deleted successfully', 'code' => 200];
+            return $this->_userService->deleteUser($id);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -47,21 +47,18 @@ class UserController extends Controller{
     public function showFav(int $id)
     {
         try {
-            $userFavorites = $this->_userService->getFavoritesByUserId($id);
-            if($userFavorites->isEmpty()){
-                //return response()->json(['message' => 'No favorites found'], 404);
-            }
-            return response()->json(["favorites" => $userFavorites],200);
+            $favorite = $this->_userService->getFavoritesByUserId($id);
+            return FavoriteResource::make($favorite)->resource;
         } catch (\Exception $e) {
             throw $e;
         }
     }
 
-    public function storeFav(int $user_id, Request $request)
+    public function storeFav(Request $request)
     {
         try {
-            $userFavorites = $this->_userService->storeFavorites($user_id, $request);
-            return ['message' => 'Favorite created successfully', 'userFavorite'=> new UserResource($userFavorites), 'code' => 200];
+            $favorite = $this->_userService->storeFavorites($request);
+            return new FavoriteResource($favorite);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -69,11 +66,18 @@ class UserController extends Controller{
 
     public function destroyFav(int $user_id, Request $request)
     {
-       
         try {
-            $stock_id = $request->stock_id;
-            $this->_userService->deleteFavorites($user_id, $stock_id);
-            return ['message' => 'Favorite deleted successfully', 'code' => 200];
+            return $this->_userService->deleteFavorites($user_id, $request->stock_id);
+        } catch (\Exception $e) {
+            throw $e;
+        }
+    }
+
+    public function showOrderByUserId(int $id)
+    {
+        try {
+            $order= $this->_userService->getOrderByUserId($id);
+            return OrderResource::collection($order)->collection;
         } catch (\Exception $e) {
             throw $e;
         }

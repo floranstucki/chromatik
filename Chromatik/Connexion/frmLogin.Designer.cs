@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.lblPwd = new System.Windows.Forms.Label();
-            this.tbxUsername = new System.Windows.Forms.TextBox();
+            this.tbxEmail = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -40,14 +40,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblUsername
+            // lblEmail
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(140, 39);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(61, 13);
-            this.lblUsername.TabIndex = 4;
-            this.lblUsername.Text = "Username :";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(140, 39);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(38, 13);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "Email :";
             // 
             // lblPwd
             // 
@@ -58,12 +58,12 @@
             this.lblPwd.TabIndex = 5;
             this.lblPwd.Text = "Password :";
             // 
-            // tbxUsername
+            // tbxEmail
             // 
-            this.tbxUsername.Location = new System.Drawing.Point(247, 36);
-            this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Size = new System.Drawing.Size(108, 20);
-            this.tbxUsername.TabIndex = 0;
+            this.tbxEmail.Location = new System.Drawing.Point(247, 36);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.Size = new System.Drawing.Size(108, 20);
+            this.tbxEmail.TabIndex = 0;
             // 
             // tbxPassword
             // 
@@ -126,9 +126,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbxPassword);
-            this.Controls.Add(this.tbxUsername);
+            this.Controls.Add(this.tbxEmail);
             this.Controls.Add(this.lblPwd);
-            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.lblEmail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -143,9 +143,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPwd;
-        private System.Windows.Forms.TextBox tbxUsername;
+        private System.Windows.Forms.TextBox tbxEmail;
         private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
