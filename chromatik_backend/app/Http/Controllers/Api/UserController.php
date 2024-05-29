@@ -11,18 +11,26 @@ class UserController extends Controller{
     public function __construct(private UserService $_userService){}
     public function index(){
         try {
-            $users= $this->_userService->getUsers();
-            if($users->isEmpty()){
+            $users = $this->_userService->getUsers();
+            
+            if ($users->isEmpty()) {
                 return response()->json(['message' => 'No users found', 'code' => 404 ]);
             }
+    
+            $users->each(function ($user) {
+                $user->role = $user->roles()->get()->pluck('name')->first();
+            });
+    
             return UserResource::collection($users)->collection;
         } catch (\Exception $e) {
             throw $e;
         }
     }
+        
     public function show(int $id){
         try {
             $user= $this->_userService->getUserById($id);
+            $user->role = $user->roles()->get()->pluck('name')->first();
             return UserResource::make($user)->resource;
         } catch (\Exception $e) {
             throw $e;
@@ -32,7 +40,7 @@ class UserController extends Controller{
         try {
             $this->_userService->updateUser($request, $id);
             $user = $this->_userService->getUserById($id);
-            return new UserResource($user);
+            return UserResource::make($user)->resource;
         } catch (\Exception $e) {
             throw $e;
         }
@@ -54,11 +62,12 @@ class UserController extends Controller{
         }
     }
 
-    public function storeFav(Request $request)
+    public function storeFav($id, Request $request)
     {
         try {
+            $request->merge(['user_id' => $id]);
             $favorite = $this->_userService->storeFavorites($request);
-            return new FavoriteResource($favorite);
+            return  FavoriteResource::make($favorite)->resource;
         } catch (\Exception $e) {
             throw $e;
         }
@@ -67,7 +76,8 @@ class UserController extends Controller{
     public function destroyFav(int $user_id, Request $request)
     {
         try {
-            return $this->_userService->deleteFavorites($user_id, $request->stock_id);
+            $this->_userService->deleteFavorites($user_id, $request->stock_id);
+            return response()->json(['message' => 'Favorite deleted successfully']);
         } catch (\Exception $e) {
             throw $e;
         }

@@ -128,10 +128,10 @@ class CartService
      * @return bool | null
      * @throws \Exception Thrown if an error occurs while deleting the cart
      */
-    public function deleteCart(int $id)
+    public function deleteCart(int $id,int $stockid)
     {
         try {
-            $cart = $this->getCartById($id);
+            $cart = Cart::where('user_id', $id)->where('stock_id', $stockid)->first();
             if ($cart == null) {
                 return null;
             }

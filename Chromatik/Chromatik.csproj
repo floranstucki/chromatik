@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.4.5.0\build\net462\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.4.5.0\build\net462\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.4.1.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.4.1.0\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -27,6 +29,8 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,6 +57,12 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=4.0.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.4.1.0\lib\net462\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework.legacy, Version=4.0.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.4.1.0\lib\net462\nunit.framework.legacy.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -97,95 +107,97 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Cart.cs" />
+    <Compile Include="Classes\Command.cs" />
+    <Compile Include="Classes\CommandDetail.cs" />
     <Compile Include="Classes\Favorite.cs" />
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\Stock.cs" />
     <Compile Include="Classes\Supplier.cs" />
     <Compile Include="Classes\Token\AccessToken.cs" />
     <Compile Include="Classes\Token\LocalStorage.cs" />
-    <Compile Include="Forms\frmAdministrateur.cs">
+    <Compile Include="Forms\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAdministrateur.Designer.cs">
-      <DependentUpon>frmAdministrateur.cs</DependentUpon>
+    <Compile Include="Forms\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmDetailCommande.cs">
+    <Compile Include="Forms\frmOrderDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmDetailCommande.Designer.cs">
-      <DependentUpon>frmDetailCommande.cs</DependentUpon>
+    <Compile Include="Forms\frmOrderDetails.Designer.cs">
+      <DependentUpon>frmOrderDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmDetailsFourniture.cs">
+    <Compile Include="Forms\frmStockDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmDetailsFourniture.Designer.cs">
-      <DependentUpon>frmDetailsFourniture.cs</DependentUpon>
+    <Compile Include="Forms\frmStockDetails.Designer.cs">
+      <DependentUpon>frmStockDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmFournitures.cs">
+    <Compile Include="Forms\frmAllStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmFournitures.Designer.cs">
-      <DependentUpon>frmFournitures.cs</DependentUpon>
+    <Compile Include="Forms\frmAllStock.Designer.cs">
+      <DependentUpon>frmAllStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmListCommandes.cs">
+    <Compile Include="Forms\frmOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmListCommandes.Designer.cs">
-      <DependentUpon>frmListCommandes.cs</DependentUpon>
+    <Compile Include="Forms\frmOrderList.Designer.cs">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmCommande.cs">
+    <Compile Include="Forms\frmAddCart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmCommande.Designer.cs">
-      <DependentUpon>frmCommande.cs</DependentUpon>
+    <Compile Include="Forms\frmAddCart.Designer.cs">
+      <DependentUpon>frmAddCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connexion\frmForgotPassword.cs">
+    <Compile Include="Connection\frmForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Connexion\frmForgotPassword.Designer.cs">
+    <Compile Include="Connection\frmForgotPassword.Designer.cs">
       <DependentUpon>frmForgotPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connexion\frmLogin.cs">
+    <Compile Include="Connection\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Connexion\frmLogin.Designer.cs">
+    <Compile Include="Connection\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connexion\frmSignUp.cs">
+    <Compile Include="Connection\frmSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Connexion\frmSignUp.Designer.cs">
+    <Compile Include="Connection\frmSignUp.Designer.cs">
       <DependentUpon>frmSignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmFavoris.cs">
+    <Compile Include="Forms\frmFavorites.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmFavoris.Designer.cs">
-      <DependentUpon>frmFavoris.cs</DependentUpon>
+    <Compile Include="Forms\frmFavorites.Designer.cs">
+      <DependentUpon>frmFavorites.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmFournisseur.cs">
+    <Compile Include="Forms\frmSuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmFournisseur.Designer.cs">
-      <DependentUpon>frmFournisseur.cs</DependentUpon>
+    <Compile Include="Forms\frmSuppliers.Designer.cs">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmPanier.cs">
+    <Compile Include="Forms\frmCart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmPanier.Designer.cs">
-      <DependentUpon>frmPanier.cs</DependentUpon>
+    <Compile Include="Forms\frmCart.Designer.cs">
+      <DependentUpon>frmCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmProfil.cs">
+    <Compile Include="Forms\frmProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmProfil.Designer.cs">
-      <DependentUpon>frmProfil.cs</DependentUpon>
+    <Compile Include="Forms\frmProfile.Designer.cs">
+      <DependentUpon>frmProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmStock.cs">
+    <Compile Include="Forms\frmAddStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmStock.Designer.cs">
-      <DependentUpon>frmStock.cs</DependentUpon>
+    <Compile Include="Forms\frmAddStock.Designer.cs">
+      <DependentUpon>frmAddStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmUpdateStock.cs">
       <SubType>Form</SubType>
@@ -202,47 +214,47 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\User.cs" />
-    <EmbeddedResource Include="Forms\frmAdministrateur.resx">
-      <DependentUpon>frmAdministrateur.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmCommande.resx">
-      <DependentUpon>frmCommande.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmAddCart.resx">
+      <DependentUpon>frmAddCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Connexion\frmForgotPassword.resx">
+    <EmbeddedResource Include="Connection\frmForgotPassword.resx">
       <DependentUpon>frmForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Connexion\frmLogin.resx">
+    <EmbeddedResource Include="Connection\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Connexion\frmSignUp.resx">
+    <EmbeddedResource Include="Connection\frmSignUp.resx">
       <DependentUpon>frmSignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDetailCommande.resx">
-      <DependentUpon>frmDetailCommande.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmOrderDetails.resx">
+      <DependentUpon>frmOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDetailsFourniture.resx">
-      <DependentUpon>frmDetailsFourniture.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmStockDetails.resx">
+      <DependentUpon>frmStockDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmFavoris.resx">
-      <DependentUpon>frmFavoris.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmFavorites.resx">
+      <DependentUpon>frmFavorites.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmFournisseur.resx">
-      <DependentUpon>frmFournisseur.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmSuppliers.resx">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmFournitures.resx">
-      <DependentUpon>frmFournitures.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmAllStock.resx">
+      <DependentUpon>frmAllStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmListCommandes.resx">
-      <DependentUpon>frmListCommandes.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmOrderList.resx">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmPanier.resx">
-      <DependentUpon>frmPanier.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmCart.resx">
+      <DependentUpon>frmCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmProfil.resx">
-      <DependentUpon>frmProfil.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmProfile.resx">
+      <DependentUpon>frmProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmStock.resx">
-      <DependentUpon>frmStock.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmAddStock.resx">
+      <DependentUpon>frmAddStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmUpdateStock.resx">
       <DependentUpon>frmUpdateStock.cs</DependentUpon>
@@ -286,5 +298,15 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.4.1.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.4.1.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.4.5.0\build\net462\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.4.5.0\build\net462\NUnit3TestAdapter.props'))" />
+  </Target>
 </Project>

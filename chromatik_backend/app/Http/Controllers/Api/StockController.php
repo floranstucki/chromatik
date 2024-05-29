@@ -48,7 +48,7 @@ class StockController extends Controller{
             if ($stock == null) {
                 return response()->json(['message' => 'Stock not found'], 404);
             }
-            return new StockResource($stock) ;
+            return StockResource::make($stock)->resource;
         } catch (\Exception $e) {
             throw $e;
         }

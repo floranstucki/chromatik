@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\Architecture\\chromatik\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\mdi\\mdichromatik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\connexion\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\connexion\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|D:\\Architecture\\chromatik\\chromatik\\connexion\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\connexion\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|D:\\Architecture\\chromatik\\chromatik\\connexion\\frmsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\connexion\\frmsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|D:\\Architecture\\chromatik\\chromatik\\mdi\\mdichromatik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\mdi\\mdichromatik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\mdi\\mdichromatik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|D:\\Architecture\\chromatik\\chromatik\\mdi\\mdichromatik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\mdi\\mdichromatik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmlistcommandes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmlistcommandes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmlistcommandes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmlistcommandes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,52 +35,60 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Connexion\\frmLogin.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Connexion\\frmLogin.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Connexion\\frmLogin.cs",
+              "RelativeToolTip": "Chromatik\\Connexion\\frmLogin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T15:16:56.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmLogin.cs [Design]",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Connexion\\frmLogin.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Connexion\\frmLogin.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Connexion\\frmLogin.cs [Design]",
+              "RelativeToolTip": "Chromatik\\Connexion\\frmLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T15:16:56.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmSignUp.cs [Design]",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Connexion\\frmSignUp.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Connexion\\frmSignUp.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Connexion\\frmSignUp.cs [Design]",
+              "RelativeToolTip": "Chromatik\\Connexion\\frmSignUp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T15:16:46.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "mdiChromatik.cs",
               "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\MDI\\mdiChromatik.cs",
               "RelativeDocumentMoniker": "Chromatik\\MDI\\mdiChromatik.cs",
               "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\MDI\\mdiChromatik.cs",
               "RelativeToolTip": "Chromatik\\MDI\\mdiChromatik.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAgwDwAAAAiAAAA",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAUwCMAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T19:33:06.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-29T11:44:28.23Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmListCommandes.cs",
-              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmListCommandes.cs",
-              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmListCommandes.cs",
-              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmListCommandes.cs",
-              "RelativeToolTip": "Chromatik\\Forms\\frmListCommandes.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAwEwAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T19:11:22.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmListCommandes.cs [Design]",
-              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmListCommandes.cs",
-              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmListCommandes.cs",
-              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmListCommandes.cs [Design]",
-              "RelativeToolTip": "Chromatik\\Forms\\frmListCommandes.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T19:11:21.737Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "mdiChromatik.cs [Design]",
               "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\MDI\\mdiChromatik.cs",
               "RelativeDocumentMoniker": "Chromatik\\MDI\\mdiChromatik.cs",
               "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\MDI\\mdiChromatik.cs [Design]",
               "RelativeToolTip": "Chromatik\\MDI\\mdiChromatik.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T19:11:11.648Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-29T11:44:14.738Z"
             }
           ]
         }

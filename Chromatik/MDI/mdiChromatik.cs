@@ -19,65 +19,75 @@ namespace Chromatik.MDI
     public partial class mdiChromatik : Form
     {
         frmLogin frm = new frmLogin();
-        bool _isAdmin = true;
         public mdiChromatik()
         {
             InitializeComponent();
             frm.ShowDialog();
+            checkAdmin();
             
         }
-
+        private void checkAdmin() { 
+            if (Storage.getUser().Role == "manage")
+            {
+                tssOpen.Visible = true;
+                tsmiOpenAdminPanel.Visible = true;
+                tssAdd.Visible = true;
+                tsmiAddStock.Visible = true;
+                tsmiAddSupplier.Visible = true;
+            }
+        }
         private void tsmiOuvrirCommandes_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaireMDI<frmListCommandes>(); 
+            OuvrirFormulaireMDI<frmOrderList>(); 
         }
 
         private void tsmiOuvrirFavoris_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaireMDI<frmFavoris>();
+            OuvrirFormulaireMDI<frmFavorites>();
         }
 
        
 
         private void tsmiAjouterCommande_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaireMDI<frmCommande>();            
+            OuvrirFormulaireMDI<frmAddCart>();            
         }
 
         private void tsmiOuvrirPanier_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaireMDI<frmPanier>();
+            OuvrirFormulaireMDI<frmCart>();
 
         }
 
         private void tsmiUtilisateurProfil_Click(object sender, EventArgs e)
         {
-             OuvrirFormulaireMDI<frmProfil>();  
+             OuvrirFormulaireMDI<frmProfile>();  
         }
 
         private void tsmiUtilisateurLogOut_Click(object sender, EventArgs e)
         {
             Storage.setToken(null);
             Storage.setUser(null);
+            Application.Restart();
         }
         private void tsmiAjouterStock_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaireMDI<frmStock>();
+            OuvrirFormulaireMDI<frmAddStock>();
         }
 
         private void tsmiAjouterFournisseur_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaireMDI<frmFournisseur>();
+            OuvrirFormulaireMDI<frmSuppliers>();
         }
 
         private void tsmiOuvrirFournitures_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaireMDI<frmFournitures>();
+            OuvrirFormulaireMDI<frmAllStock>();
         }
 
         private void tsmiOuvrirAdministrateur_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaireMDI<frmAdministrateur>();
+            OuvrirFormulaireMDI<frmAdmin>();
         }
 
         /// <summary>
@@ -118,26 +128,6 @@ namespace Chromatik.MDI
             Storage.setUser(null);
         }
 
-        public void checkAdmin()
-        {
-            if (_isAdmin)
-            {
-                tsmiOuvrirAdministrateur.Visible = true;
-                tsmiAjouterStock.Visible = true;
-                tsmiAjouterFournisseur.Visible = true;
-                tssAjouter.Visible = true;
-                tssOuvrir.Visible = true;
-            }
-            else
-            {
-                tsmiOuvrirAdministrateur.Visible = false;
-                tsmiAjouterStock.Visible = false;
-                tsmiAjouterFournisseur.Visible = false;
-                tssAjouter.Visible = false;
-                tssOuvrir.Visible = false;
-            }
-        }
-
         private void mdiChromatik_Activated(object sender, EventArgs e)
         {
             try { 
@@ -147,7 +137,7 @@ namespace Chromatik.MDI
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(contentType));
                 client.DefaultRequestHeaders.Add("Authorization", String.Format("Bearer {0}", Storage.token));
                 client.BaseAddress = new Uri("http://localhost:8000/api/");
-            var consumeApi = client.GetAsync("user");
+            var consumeApi = client.GetAsync("users");
             consumeApi.Wait();
             var data = consumeApi.Result;
 

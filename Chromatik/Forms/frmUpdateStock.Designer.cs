@@ -28,175 +28,190 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbxMarque = new System.Windows.Forms.TextBox();
-            this.tbxNom = new System.Windows.Forms.TextBox();
-            this.nudPrix = new System.Windows.Forms.NumericUpDown();
-            this.cmbCouleur = new System.Windows.Forms.ComboBox();
-            this.cmbFournisseur = new System.Windows.Forms.ComboBox();
-            this.cmbTypeFourniture = new System.Windows.Forms.ComboBox();
-            this.btnModifier = new System.Windows.Forms.Button();
-            this.lblFournisseur = new System.Windows.Forms.Label();
-            this.lblPrix = new System.Windows.Forms.Label();
-            this.lblCouleur = new System.Windows.Forms.Label();
-            this.lblMarque = new System.Windows.Forms.Label();
-            this.lblNom = new System.Windows.Forms.Label();
+            this.tbxBrand = new System.Windows.Forms.TextBox();
+            this.tbxSupply = new System.Windows.Forms.TextBox();
+            this.nudPrice = new System.Windows.Forms.NumericUpDown();
+            this.cmbSupplier = new System.Windows.Forms.ComboBox();
+            this.cmbStockType = new System.Windows.Forms.ComboBox();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.lblSuppliers = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblBrand = new System.Windows.Forms.Label();
+            this.lblSupply = new System.Windows.Forms.Label();
             this.lblType = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).BeginInit();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbxMarque
+            // tbxBrand
             // 
-            this.tbxMarque.Location = new System.Drawing.Point(190, 187);
-            this.tbxMarque.Name = "tbxMarque";
-            this.tbxMarque.Size = new System.Drawing.Size(121, 20);
-            this.tbxMarque.TabIndex = 2;
+            this.tbxBrand.Location = new System.Drawing.Point(190, 187);
+            this.tbxBrand.Name = "tbxBrand";
+            this.tbxBrand.Size = new System.Drawing.Size(121, 20);
+            this.tbxBrand.TabIndex = 2;
             // 
-            // tbxNom
+            // tbxSupply
             // 
-            this.tbxNom.Location = new System.Drawing.Point(190, 116);
-            this.tbxNom.Name = "tbxNom";
-            this.tbxNom.Size = new System.Drawing.Size(121, 20);
-            this.tbxNom.TabIndex = 1;
+            this.tbxSupply.Location = new System.Drawing.Point(190, 116);
+            this.tbxSupply.Name = "tbxSupply";
+            this.tbxSupply.Size = new System.Drawing.Size(121, 20);
+            this.tbxSupply.TabIndex = 1;
             // 
-            // nudPrix
+            // nudPrice
             // 
-            this.nudPrix.DecimalPlaces = 1;
-            this.nudPrix.Increment = new decimal(new int[] {
+            this.nudPrice.DecimalPlaces = 1;
+            this.nudPrice.Increment = new decimal(new int[] {
             5,
             0,
             0,
             65536});
-            this.nudPrix.Location = new System.Drawing.Point(536, 180);
-            this.nudPrix.Minimum = new decimal(new int[] {
+            this.nudPrice.Location = new System.Drawing.Point(538, 116);
+            this.nudPrice.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nudPrix.Name = "nudPrix";
-            this.nudPrix.Size = new System.Drawing.Size(119, 20);
-            this.nudPrix.TabIndex = 5;
-            this.nudPrix.Value = new decimal(new int[] {
+            this.nudPrice.Name = "nudPrice";
+            this.nudPrice.Size = new System.Drawing.Size(119, 20);
+            this.nudPrice.TabIndex = 4;
+            this.nudPrice.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // cmbCouleur
+            // cmbSupplier
             // 
-            this.cmbCouleur.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbCouleur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCouleur.FormattingEnabled = true;
-            this.cmbCouleur.IntegralHeight = false;
-            this.cmbCouleur.Location = new System.Drawing.Point(536, 117);
-            this.cmbCouleur.MaxDropDownItems = 10;
-            this.cmbCouleur.Name = "cmbCouleur";
-            this.cmbCouleur.Size = new System.Drawing.Size(120, 21);
-            this.cmbCouleur.TabIndex = 4;
+            this.cmbSupplier.FormattingEnabled = true;
+            this.cmbSupplier.Location = new System.Drawing.Point(536, 54);
+            this.cmbSupplier.Name = "cmbSupplier";
+            this.cmbSupplier.Size = new System.Drawing.Size(121, 21);
+            this.cmbSupplier.TabIndex = 3;
             // 
-            // cmbFournisseur
+            // cmbStockType
             // 
-            this.cmbFournisseur.FormattingEnabled = true;
-            this.cmbFournisseur.Location = new System.Drawing.Point(536, 54);
-            this.cmbFournisseur.Name = "cmbFournisseur";
-            this.cmbFournisseur.Size = new System.Drawing.Size(121, 21);
-            this.cmbFournisseur.TabIndex = 3;
+            this.cmbStockType.FormattingEnabled = true;
+            this.cmbStockType.Location = new System.Drawing.Point(190, 54);
+            this.cmbStockType.Name = "cmbStockType";
+            this.cmbStockType.Size = new System.Drawing.Size(121, 21);
+            this.cmbStockType.TabIndex = 0;
             // 
-            // cmbTypeFourniture
+            // btnModify
             // 
-            this.cmbTypeFourniture.FormattingEnabled = true;
-            this.cmbTypeFourniture.Location = new System.Drawing.Point(190, 54);
-            this.cmbTypeFourniture.Name = "cmbTypeFourniture";
-            this.cmbTypeFourniture.Size = new System.Drawing.Size(121, 21);
-            this.cmbTypeFourniture.TabIndex = 0;
+            this.btnModify.Location = new System.Drawing.Point(405, 247);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(252, 57);
+            this.btnModify.TabIndex = 6;
+            this.btnModify.Text = "Modify";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
-            // btnModifier
+            // lblSuppliers
             // 
-            this.btnModifier.Location = new System.Drawing.Point(425, 250);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(252, 57);
-            this.btnModifier.TabIndex = 7;
-            this.btnModifier.Text = "Modifier";
-            this.btnModifier.UseVisualStyleBackColor = true;
+            this.lblSuppliers.AutoSize = true;
+            this.lblSuppliers.Location = new System.Drawing.Point(402, 57);
+            this.lblSuppliers.Name = "lblSuppliers";
+            this.lblSuppliers.Size = new System.Drawing.Size(45, 13);
+            this.lblSuppliers.TabIndex = 21;
+            this.lblSuppliers.Text = "Supplier";
             // 
-            // lblFournisseur
+            // lblPrice
             // 
-            this.lblFournisseur.AutoSize = true;
-            this.lblFournisseur.Location = new System.Drawing.Point(402, 57);
-            this.lblFournisseur.Name = "lblFournisseur";
-            this.lblFournisseur.Size = new System.Drawing.Size(61, 13);
-            this.lblFournisseur.TabIndex = 21;
-            this.lblFournisseur.Text = "Fournisseur";
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(402, 123);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(62, 13);
+            this.lblPrice.TabIndex = 17;
+            this.lblPrice.Text = "Unit Price : ";
             // 
-            // lblPrix
+            // lblBrand
             // 
-            this.lblPrix.AutoSize = true;
-            this.lblPrix.Location = new System.Drawing.Point(413, 187);
-            this.lblPrix.Name = "lblPrix";
-            this.lblPrix.Size = new System.Drawing.Size(69, 13);
-            this.lblPrix.TabIndex = 17;
-            this.lblPrix.Text = "Prix Unitaire :";
+            this.lblBrand.AutoSize = true;
+            this.lblBrand.Location = new System.Drawing.Point(56, 187);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(44, 13);
+            this.lblBrand.TabIndex = 13;
+            this.lblBrand.Text = "Brand : ";
             // 
-            // lblCouleur
+            // lblSupply
             // 
-            this.lblCouleur.AutoSize = true;
-            this.lblCouleur.Location = new System.Drawing.Point(410, 120);
-            this.lblCouleur.Name = "lblCouleur";
-            this.lblCouleur.Size = new System.Drawing.Size(49, 13);
-            this.lblCouleur.TabIndex = 15;
-            this.lblCouleur.Text = "Couleur :";
-            // 
-            // lblMarque
-            // 
-            this.lblMarque.AutoSize = true;
-            this.lblMarque.Location = new System.Drawing.Point(56, 187);
-            this.lblMarque.Name = "lblMarque";
-            this.lblMarque.Size = new System.Drawing.Size(52, 13);
-            this.lblMarque.TabIndex = 13;
-            this.lblMarque.Text = "Marque : ";
-            // 
-            // lblNom
-            // 
-            this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(56, 124);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(79, 13);
-            this.lblNom.TabIndex = 11;
-            this.lblNom.Text = "Nom Fourniture";
+            this.lblSupply.AutoSize = true;
+            this.lblSupply.Location = new System.Drawing.Point(56, 124);
+            this.lblSupply.Name = "lblSupply";
+            this.lblSupply.Size = new System.Drawing.Size(76, 13);
+            this.lblSupply.TabIndex = 11;
+            this.lblSupply.Text = "Supply Name :";
             // 
             // lblType
             // 
             this.lblType.AutoSize = true;
             this.lblType.Location = new System.Drawing.Point(53, 57);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(102, 13);
+            this.lblType.Size = new System.Drawing.Size(68, 13);
             this.lblType.TabIndex = 9;
-            this.lblType.Text = "Type de Fourniture :";
+            this.lblType.Text = "Stock Type :";
+            // 
+            // nudQuantity
+            // 
+            this.nudQuantity.DecimalPlaces = 1;
+            this.nudQuantity.Location = new System.Drawing.Point(538, 180);
+            this.nudQuantity.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nudQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(119, 20);
+            this.nudQuantity.TabIndex = 5;
+            this.nudQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point(402, 187);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(52, 13);
+            this.lblQuantity.TabIndex = 23;
+            this.lblQuantity.Text = "Quantity :";
             // 
             // frmUpdateStock
             // 
-            this.AcceptButton = this.btnModifier;
+            this.AcceptButton = this.btnModify;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 345);
-            this.Controls.Add(this.tbxMarque);
-            this.Controls.Add(this.tbxNom);
-            this.Controls.Add(this.nudPrix);
-            this.Controls.Add(this.cmbCouleur);
-            this.Controls.Add(this.cmbFournisseur);
-            this.Controls.Add(this.cmbTypeFourniture);
-            this.Controls.Add(this.btnModifier);
-            this.Controls.Add(this.lblFournisseur);
-            this.Controls.Add(this.lblPrix);
-            this.Controls.Add(this.lblCouleur);
-            this.Controls.Add(this.lblMarque);
-            this.Controls.Add(this.lblNom);
+            this.ClientSize = new System.Drawing.Size(695, 348);
+            this.Controls.Add(this.nudQuantity);
+            this.Controls.Add(this.lblQuantity);
+            this.Controls.Add(this.tbxBrand);
+            this.Controls.Add(this.tbxSupply);
+            this.Controls.Add(this.nudPrice);
+            this.Controls.Add(this.cmbSupplier);
+            this.Controls.Add(this.cmbStockType);
+            this.Controls.Add(this.btnModify);
+            this.Controls.Add(this.lblSuppliers);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.lblBrand);
+            this.Controls.Add(this.lblSupply);
             this.Controls.Add(this.lblType);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmUpdateStock";
-            this.Text = "Modification de stock";
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrix)).EndInit();
+            this.Text = "Update Stock";
+            this.Load += new System.EventHandler(this.frmUpdateStock_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,18 +219,18 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbxMarque;
-        private System.Windows.Forms.TextBox tbxNom;
-        private System.Windows.Forms.NumericUpDown nudPrix;
-        private System.Windows.Forms.ComboBox cmbCouleur;
-        private System.Windows.Forms.ComboBox cmbFournisseur;
-        private System.Windows.Forms.ComboBox cmbTypeFourniture;
-        private System.Windows.Forms.Button btnModifier;
-        private System.Windows.Forms.Label lblFournisseur;
-        private System.Windows.Forms.Label lblPrix;
-        private System.Windows.Forms.Label lblCouleur;
-        private System.Windows.Forms.Label lblMarque;
-        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.TextBox tbxBrand;
+        private System.Windows.Forms.TextBox tbxSupply;
+        private System.Windows.Forms.NumericUpDown nudPrice;
+        private System.Windows.Forms.ComboBox cmbSupplier;
+        private System.Windows.Forms.ComboBox cmbStockType;
+        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Label lblSuppliers;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblBrand;
+        private System.Windows.Forms.Label lblSupply;
         private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.NumericUpDown nudQuantity;
+        private System.Windows.Forms.Label lblQuantity;
     }
 }

@@ -49,7 +49,7 @@ class OrderController extends Controller{
     {
         try {
             $order = $this->_orderService->updateOrder($request, $id);
-            return new OrderResource($order);
+            return OrderResource::make($order)->resource;
         } catch (\Exception $e) {
             throw $e;
         }

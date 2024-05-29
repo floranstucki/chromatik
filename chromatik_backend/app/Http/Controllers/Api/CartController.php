@@ -55,7 +55,7 @@ class CartController extends Controller{
     {
         try {
             $cart =  $this->_cartService->storeCart($request);
-            return new CartResource($cart);
+            return CartResource::make($cart)->resource;
         } catch (\Exception $e) {
             throw $e;
         }
@@ -64,7 +64,7 @@ class CartController extends Controller{
     /**
      * Update the specified cart in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, int $id)
     {
         try {
             return $this->_cartService->updateCart($request,$id);
@@ -76,10 +76,10 @@ class CartController extends Controller{
     /**
      * Remove the specified cart from storage.
      */
-    public function destroy(string $id)
+    public function destroy(int $id, int $stockid)
     {
         try {
-            $this->_cartService->deleteCart($id);
+            $this->_cartService->deleteCart($id,$stockid);
             return response()->json(['message' => 'Cart deleted successfully']);
         } catch (\Exception $e) {
             throw $e;

@@ -40,9 +40,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::group(['middleware' => ['can:create stock']], function () {
         Route::post('/stock', [StockController::class, "store"]);
     });
-    Route::group(['middleware' => ['can:update stock']], function () {
         Route::put('/stock/{id}', [StockController::class, "update"]);
-    });
+    
     Route::group(['middleware' => ['can:delete stock']], function () {
         Route::delete('/stock/{id}', [StockController::class, "destroy"]);
     });
@@ -79,6 +78,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
     Route::get('/users/{id}/favorites',[UserController::class, 'showFav']); 
     Route::get('/users/{id}/carts',[CartController::class,'findByUserId']); 
+    Route::delete('/users/{id}/carts/{stockid}',[CartController::class,'destroy']); 
     Route::post('/users/{id}/favorites',[UserController::class, 'storeFav']); 
     Route::delete('/users/{id}/favorites',[UserController::class, 'destroyFav']); 
 });
