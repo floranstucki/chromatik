@@ -13,22 +13,15 @@ namespace Chromatik.Forms
         {
             InitializeComponent();
             init(id);
-            cmbStockType.Items.Add("Pen");
-            cmbStockType.Items.Add("Pencil");
-            cmbStockType.Items.Add("Paint");
-            cmbStockType.Items.Add("Canvas");
-            cmbStockType.Items.Add("Brush");
+            
         }
       
 
         private void frmUpdateStock_Load(object sender, EventArgs e)
         {
-            List<Supplier> suppliers = Supplier.loadSuppliers();
+            
 
-            foreach (Supplier supplier in suppliers)
-            {
-                cmbSupplier.Items.Add(supplier.Name);
-            }
+            
         }
 
         private void btnModify_Click(object sender, EventArgs e)
@@ -43,8 +36,15 @@ namespace Chromatik.Forms
         }
 
         private void init(int stock_id) {
+            
+            cmbStockType.Items.Add("Pen");
+            cmbStockType.Items.Add("Pencil");
+            cmbStockType.Items.Add("Paint");
+            cmbStockType.Items.Add("Canvas");
+            cmbStockType.Items.Add("Brush");
             id = stock_id;
             Stock stock = Stock.loadStockById(id);
+            List<Supplier> suppliers = Supplier.loadSuppliers();
             tbxBrand.Text = stock.Brand;
             nudPrice.Text = stock.Price.ToString();
             nudQuantity.Text = stock.Quantity.ToString();
@@ -52,9 +52,14 @@ namespace Chromatik.Forms
             cmbStockType.Text = stock.Type;
             Supplier supplier = Supplier.loadSupplierById(stock.Supplier_id);
             cmbSupplier.Text = supplier.Name;
+            foreach (Supplier supp in suppliers)
+            {
+                cmbSupplier.Items.Add(supp.Name);
+            }
             if (cmbSupplier.Items.Count > 0 && supplier.Supplier_id > 0 && supplier.Supplier_id <= cmbSupplier.Items.Count)
             {
                 cmbSupplier.SelectedIndex = supplier.Supplier_id - 1;
+                Console.WriteLine(cmbSupplier.SelectedIndex);
             }
         }
     }

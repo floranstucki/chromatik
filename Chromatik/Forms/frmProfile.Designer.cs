@@ -88,7 +88,7 @@
             this.lblValueName.Location = new System.Drawing.Point(404, 131);
             this.lblValueName.Name = "lblValueName";
             this.lblValueName.Size = new System.Drawing.Size(51, 21);
-            this.lblValueName.TabIndex = 4;
+            this.lblValueName.TabIndex = 2;
             this.lblValueName.Text = "Stucki";
             // 
             // lblValueFirstName
@@ -98,7 +98,7 @@
             this.lblValueFirstName.Location = new System.Drawing.Point(404, 175);
             this.lblValueFirstName.Name = "lblValueFirstName";
             this.lblValueFirstName.Size = new System.Drawing.Size(54, 21);
-            this.lblValueFirstName.TabIndex = 5;
+            this.lblValueFirstName.TabIndex = 3;
             this.lblValueFirstName.Text = "Floran";
             // 
             // lblValueEmail
@@ -108,7 +108,7 @@
             this.lblValueEmail.Location = new System.Drawing.Point(404, 227);
             this.lblValueEmail.Name = "lblValueEmail";
             this.lblValueEmail.Size = new System.Drawing.Size(60, 21);
-            this.lblValueEmail.TabIndex = 6;
+            this.lblValueEmail.TabIndex = 4;
             this.lblValueEmail.Text = "flo_s98";
             // 
             // lblValuePhone
@@ -118,7 +118,7 @@
             this.lblValuePhone.Location = new System.Drawing.Point(404, 274);
             this.lblValuePhone.Name = "lblValuePhone";
             this.lblValuePhone.Size = new System.Drawing.Size(136, 21);
-            this.lblValuePhone.TabIndex = 8;
+            this.lblValuePhone.TabIndex = 5;
             this.lblValuePhone.Text = "+41 79 422 51 88";
             // 
             // lblPhoneNumber
@@ -136,7 +136,7 @@
             this.btnModify.Location = new System.Drawing.Point(224, 393);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(316, 23);
-            this.btnModify.TabIndex = 9;
+            this.btnModify.TabIndex = 1;
             this.btnModify.Text = "Modify your Informations";
             this.btnModify.UseVisualStyleBackColor = true;
             this.btnModify.Click += new System.EventHandler(this.btnModifier_Click);
@@ -146,7 +146,7 @@
             this.btnChange.Location = new System.Drawing.Point(224, 331);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(316, 23);
-            this.btnChange.TabIndex = 10;
+            this.btnChange.TabIndex = 0;
             this.btnChange.Text = "Change password";
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);

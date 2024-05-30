@@ -2,6 +2,7 @@
 using Chromatik.Classes.Token;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace Chromatik.Forms
@@ -103,10 +104,24 @@ namespace Chromatik.Forms
         }
         public void loadStock()
         {
+            dgvStock.Columns.Clear();
             List<Stock> stock = Stock.loadStock();
             if (stock != null)
             {
                 dgvStock.DataSource = stock;
+                
+
+                    foreach (DataGridViewColumn column in dgvStock.Columns)
+                {
+                    if (column.Name == "Date")
+                    {
+                        column.Visible = false;
+                    }
+                    if (column.Name == "Supplier_id")
+                    {
+                        column.Name = "Supplier";
+                    }
+                }
                 InitializeDataGridView();
             }
         }

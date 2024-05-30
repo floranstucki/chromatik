@@ -53,7 +53,7 @@
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.ReadOnly = true;
             this.dgvOrder.Size = new System.Drawing.Size(641, 321);
-            this.dgvOrder.TabIndex = 1;
+            this.dgvOrder.TabIndex = 0;
             this.dgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentClick);
             this.dgvOrder.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCommande_ColumnHeaderMouseClick);
             // 

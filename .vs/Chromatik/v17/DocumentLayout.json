@@ -3,8 +3,48 @@
   "WorkspaceRootPath": "D:\\Architecture\\chromatik\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmsuppliers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmsuppliers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\classes\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\classes\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmorderdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmorderdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmorderdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmorderdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmorderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmorderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmorderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmorderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|D:\\Architecture\\chromatik\\chromatik\\classes\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\classes\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmallstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmallstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmaddcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmaddcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|d:\\architecture\\chromatik\\chromatik\\forms\\frmaddcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C69642C9-1FA0-40F5-A840-9FEA24E2442A}|Chromatik\\Chromatik.csproj|solutionrelative:chromatik\\forms\\frmaddcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,15 +63,140 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmSuppliers.cs",
-              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmSuppliers.cs",
-              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmSuppliers.cs",
-              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmSuppliers.cs",
-              "RelativeToolTip": "Chromatik\\Forms\\frmSuppliers.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "frmCart.cs",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmCart.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmCart.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmCart.cs",
+              "RelativeToolTip": "Chromatik\\Forms\\frmCart.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAowDEAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T12:41:55.121Z",
+              "WhenOpened": "2024-05-30T18:24:38.865Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmCart.cs [Design]",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmCart.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmCart.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmCart.cs [Design]",
+              "RelativeToolTip": "Chromatik\\Forms\\frmCart.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T18:24:37.626Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Classes\\Order.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Classes\\Order.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Classes\\Order.cs",
+              "RelativeToolTip": "Chromatik\\Classes\\Order.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T18:24:25.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmOrderDetails.cs",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmOrderDetails.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmOrderDetails.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmOrderDetails.cs",
+              "RelativeToolTip": "Chromatik\\Forms\\frmOrderDetails.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAwwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T18:24:06.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmOrderDetails.cs [Design]",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmOrderDetails.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmOrderDetails.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmOrderDetails.cs [Design]",
+              "RelativeToolTip": "Chromatik\\Forms\\frmOrderDetails.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T18:24:01.93Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmOrderList.cs",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmOrderList.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmOrderList.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmOrderList.cs",
+              "RelativeToolTip": "Chromatik\\Forms\\frmOrderList.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAowDgAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T18:23:45.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmOrderList.cs [Design]",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmOrderList.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmOrderList.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmOrderList.cs [Design]",
+              "RelativeToolTip": "Chromatik\\Forms\\frmOrderList.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T18:23:38.184Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Classes\\User.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Classes\\User.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Classes\\User.cs",
+              "RelativeToolTip": "Chromatik\\Classes\\User.cs",
+              "ViewState": "AQIAAL0AAAAAAAAAAAAiwNcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T15:22:13.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmAllStock.cs [Design]",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmAllStock.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmAllStock.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmAllStock.cs [Design]",
+              "RelativeToolTip": "Chromatik\\Forms\\frmAllStock.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T18:06:17.356Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmAddCart.cs",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmAddCart.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmAddCart.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmAddCart.cs",
+              "RelativeToolTip": "Chromatik\\Forms\\frmAddCart.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBYAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T17:59:51.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmAddCart.cs [Design]",
+              "DocumentMoniker": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmAddCart.cs",
+              "RelativeDocumentMoniker": "Chromatik\\Forms\\frmAddCart.cs",
+              "ToolTip": "D:\\Architecture\\chromatik\\Chromatik\\Forms\\frmAddCart.cs [Design]",
+              "RelativeToolTip": "Chromatik\\Forms\\frmAddCart.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T17:59:49.782Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

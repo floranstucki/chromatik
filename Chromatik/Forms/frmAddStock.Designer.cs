@@ -104,7 +104,7 @@
             this.btnAddStock.Location = new System.Drawing.Point(454, 265);
             this.btnAddStock.Name = "btnAddStock";
             this.btnAddStock.Size = new System.Drawing.Size(252, 57);
-            this.btnAddStock.TabIndex = 7;
+            this.btnAddStock.TabIndex = 6;
             this.btnAddStock.Text = "Add to Stock";
             this.btnAddStock.UseVisualStyleBackColor = true;
             this.btnAddStock.Click += new System.EventHandler(this.btnAddStock_Click);
@@ -140,7 +140,7 @@
             0});
             this.nudNumber.Name = "nudNumber";
             this.nudNumber.Size = new System.Drawing.Size(120, 20);
-            this.nudNumber.TabIndex = 6;
+            this.nudNumber.TabIndex = 5;
             this.nudNumber.Value = new decimal(new int[] {
             1,
             0,
@@ -163,7 +163,7 @@
             0});
             this.nudPrice.Name = "nudPrice";
             this.nudPrice.Size = new System.Drawing.Size(119, 20);
-            this.nudPrice.TabIndex = 5;
+            this.nudPrice.TabIndex = 4;
             this.nudPrice.Value = new decimal(new int[] {
             1,
             0,

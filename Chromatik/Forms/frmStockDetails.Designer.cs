@@ -48,7 +48,7 @@
             this.btnFavorites.Location = new System.Drawing.Point(412, 119);
             this.btnFavorites.Name = "btnFavorites";
             this.btnFavorites.Size = new System.Drawing.Size(138, 23);
-            this.btnFavorites.TabIndex = 4;
+            this.btnFavorites.TabIndex = 0;
             this.btnFavorites.Text = "Add to Favorites";
             this.btnFavorites.UseVisualStyleBackColor = true;
             this.btnFavorites.Click += new System.EventHandler(this.btnFavorites_Click);
@@ -64,6 +64,7 @@
             // 
             // frmStockDetails
             // 
+            this.AcceptButton = this.btnFavorites;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 346);
@@ -74,7 +75,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmStockDetails";
-            this.Text = "Détails de fourniture";
+            this.Text = "Stock Details";
             this.ResumeLayout(false);
             this.PerformLayout();
 

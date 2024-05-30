@@ -83,7 +83,7 @@
             // 
             this.tsmiOpenFavorites.Name = "tsmiOpenFavorites";
             this.tsmiOpenFavorites.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.tsmiOpenFavorites.Size = new System.Drawing.Size(180, 22);
+            this.tsmiOpenFavorites.Size = new System.Drawing.Size(161, 22);
             this.tsmiOpenFavorites.Text = "Fa&vorites";
             this.tsmiOpenFavorites.Click += new System.EventHandler(this.tsmiOuvrirFavoris_Click);
             // 
@@ -91,7 +91,7 @@
             // 
             this.tsmiOpenCart.Name = "tsmiOpenCart";
             this.tsmiOpenCart.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.tsmiOpenCart.Size = new System.Drawing.Size(180, 22);
+            this.tsmiOpenCart.Size = new System.Drawing.Size(161, 22);
             this.tsmiOpenCart.Text = "&Cart";
             this.tsmiOpenCart.Click += new System.EventHandler(this.tsmiOuvrirPanier_Click);
             // 
@@ -99,7 +99,7 @@
             // 
             this.tsmiOpenOrders.Name = "tsmiOpenOrders";
             this.tsmiOpenOrders.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.tsmiOpenOrders.Size = new System.Drawing.Size(180, 22);
+            this.tsmiOpenOrders.Size = new System.Drawing.Size(161, 22);
             this.tsmiOpenOrders.Text = "O&rders";
             this.tsmiOpenOrders.Click += new System.EventHandler(this.tsmiOuvrirCommandes_Click);
             // 
@@ -107,20 +107,20 @@
             // 
             this.tsmiOpenStock.Name = "tsmiOpenStock";
             this.tsmiOpenStock.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.tsmiOpenStock.Size = new System.Drawing.Size(180, 22);
+            this.tsmiOpenStock.Size = new System.Drawing.Size(161, 22);
             this.tsmiOpenStock.Text = "&Stocks";
             this.tsmiOpenStock.Click += new System.EventHandler(this.tsmiOuvrirFournitures_Click);
             // 
             // tssOpen
             // 
             this.tssOpen.Name = "tssOpen";
-            this.tssOpen.Size = new System.Drawing.Size(177, 6);
+            this.tssOpen.Size = new System.Drawing.Size(158, 6);
             this.tssOpen.Visible = false;
             // 
             // tsmiOpenAdminPanel
             // 
             this.tsmiOpenAdminPanel.Name = "tsmiOpenAdminPanel";
-            this.tsmiOpenAdminPanel.Size = new System.Drawing.Size(180, 22);
+            this.tsmiOpenAdminPanel.Size = new System.Drawing.Size(161, 22);
             this.tsmiOpenAdminPanel.Text = "A&dmin Panel";
             this.tsmiOpenAdminPanel.Visible = false;
             this.tsmiOpenAdminPanel.Click += new System.EventHandler(this.tsmiOuvrirAdministrateur_Click);
@@ -138,7 +138,7 @@
             // 
             this.tsmiUserProfile.Name = "tsmiUserProfile";
             this.tsmiUserProfile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.tsmiUserProfile.Size = new System.Drawing.Size(180, 22);
+            this.tsmiUserProfile.Size = new System.Drawing.Size(157, 22);
             this.tsmiUserProfile.Text = "&Profile";
             this.tsmiUserProfile.Click += new System.EventHandler(this.tsmiUtilisateurProfil_Click);
             // 
@@ -146,7 +146,7 @@
             // 
             this.tsmiUserLogOut.Name = "tsmiUserLogOut";
             this.tsmiUserLogOut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.tsmiUserLogOut.Size = new System.Drawing.Size(180, 22);
+            this.tsmiUserLogOut.Size = new System.Drawing.Size(157, 22);
             this.tsmiUserLogOut.Text = "Lo&g Out";
             this.tsmiUserLogOut.Click += new System.EventHandler(this.tsmiUtilisateurLogOut_Click);
             // 
@@ -165,20 +165,20 @@
             // 
             this.tsmiAddInCart.Name = "tsmiAddInCart";
             this.tsmiAddInCart.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.tsmiAddInCart.Size = new System.Drawing.Size(180, 22);
+            this.tsmiAddInCart.Size = new System.Drawing.Size(152, 22);
             this.tsmiAddInCart.Text = "I&n Cart";
             this.tsmiAddInCart.Click += new System.EventHandler(this.tsmiAjouterCommande_Click);
             // 
             // tssAdd
             // 
             this.tssAdd.Name = "tssAdd";
-            this.tssAdd.Size = new System.Drawing.Size(177, 6);
+            this.tssAdd.Size = new System.Drawing.Size(149, 6);
             this.tssAdd.Visible = false;
             // 
             // tsmiAddStock
             // 
             this.tsmiAddStock.Name = "tsmiAddStock";
-            this.tsmiAddStock.Size = new System.Drawing.Size(180, 22);
+            this.tsmiAddStock.Size = new System.Drawing.Size(152, 22);
             this.tsmiAddStock.Text = "Stoc&k";
             this.tsmiAddStock.Visible = false;
             this.tsmiAddStock.Click += new System.EventHandler(this.tsmiAjouterStock_Click);
@@ -186,7 +186,7 @@
             // tsmiAddSupplier
             // 
             this.tsmiAddSupplier.Name = "tsmiAddSupplier";
-            this.tsmiAddSupplier.Size = new System.Drawing.Size(180, 22);
+            this.tsmiAddSupplier.Size = new System.Drawing.Size(152, 22);
             this.tsmiAddSupplier.Text = "Supp&lier";
             this.tsmiAddSupplier.Visible = false;
             this.tsmiAddSupplier.Click += new System.EventHandler(this.tsmiAjouterFournisseur_Click);
@@ -245,7 +245,7 @@
             this.MinimizeBox = false;
             this.Name = "mdiChromatik";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Interface Utilisateur";
+            this.Text = "User Interface";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.mdiChromatik_Activated);
             this.mnsMDI.ResumeLayout(false);

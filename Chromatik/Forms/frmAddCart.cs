@@ -33,11 +33,11 @@ namespace Chromatik
             {
                 if (Cart.updateCart(cart.Cart_id, (int)nudQuantity.Value))
                 {
-                    MessageBox.Show("Updated cart", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Added to cart", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Failed to update cart", "Error !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to added to cart", "Error !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -90,9 +90,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(271, 291);
+            this.btnAdd.Location = new System.Drawing.Point(425, 303);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(239, 23);
+            this.btnAdd.Size = new System.Drawing.Size(271, 23);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add a supplier";
             this.btnAdd.UseVisualStyleBackColor = true;

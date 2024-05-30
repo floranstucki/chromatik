@@ -71,7 +71,7 @@
             0});
             this.nudQuantity.Name = "nudQuantity";
             this.nudQuantity.Size = new System.Drawing.Size(120, 20);
-            this.nudQuantity.TabIndex = 3;
+            this.nudQuantity.TabIndex = 2;
             this.nudQuantity.Value = new decimal(new int[] {
             1,
             0,
@@ -92,7 +92,7 @@
             this.btnAddToCart.Location = new System.Drawing.Point(176, 189);
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.Size = new System.Drawing.Size(121, 23);
-            this.btnAddToCart.TabIndex = 4;
+            this.btnAddToCart.TabIndex = 3;
             this.btnAddToCart.Text = "Add To Cart";
             this.btnAddToCart.UseVisualStyleBackColor = true;
             this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);

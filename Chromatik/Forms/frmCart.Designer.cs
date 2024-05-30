@@ -53,7 +53,7 @@
             this.btnOrder.Location = new System.Drawing.Point(93, 413);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(575, 23);
-            this.btnOrder.TabIndex = 2;
+            this.btnOrder.TabIndex = 1;
             this.btnOrder.Text = "Order";
             this.btnOrder.UseVisualStyleBackColor = true;
             this.btnOrder.Click += new System.EventHandler(this.btnCommand_Click);
@@ -65,7 +65,7 @@
             this.dgvCart.Location = new System.Drawing.Point(93, 104);
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.Size = new System.Drawing.Size(575, 286);
-            this.dgvCart.TabIndex = 3;
+            this.dgvCart.TabIndex = 0;
             this.dgvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellContentClick);
             // 
             // frmCart
