@@ -34,7 +34,7 @@
             this.cmbSupplier = new System.Windows.Forms.ComboBox();
             this.cmbStockType = new System.Windows.Forms.ComboBox();
             this.btnModify = new System.Windows.Forms.Button();
-            this.lblSuppliers = new System.Windows.Forms.Label();
+            this.lblSupplier = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
             this.lblSupply = new System.Windows.Forms.Label();
@@ -108,14 +108,14 @@
             this.btnModify.UseVisualStyleBackColor = true;
             this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
-            // lblSuppliers
+            // lblSupplier
             // 
-            this.lblSuppliers.AutoSize = true;
-            this.lblSuppliers.Location = new System.Drawing.Point(402, 57);
-            this.lblSuppliers.Name = "lblSuppliers";
-            this.lblSuppliers.Size = new System.Drawing.Size(45, 13);
-            this.lblSuppliers.TabIndex = 21;
-            this.lblSuppliers.Text = "Supplier";
+            this.lblSupplier.AutoSize = true;
+            this.lblSupplier.Location = new System.Drawing.Point(402, 57);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(45, 13);
+            this.lblSupplier.TabIndex = 21;
+            this.lblSupplier.Text = "Supplier";
             // 
             // lblPrice
             // 
@@ -199,7 +199,7 @@
             this.Controls.Add(this.cmbSupplier);
             this.Controls.Add(this.cmbStockType);
             this.Controls.Add(this.btnModify);
-            this.Controls.Add(this.lblSuppliers);
+            this.Controls.Add(this.lblSupplier);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblBrand);
             this.Controls.Add(this.lblSupply);
@@ -225,7 +225,7 @@
         private System.Windows.Forms.ComboBox cmbSupplier;
         private System.Windows.Forms.ComboBox cmbStockType;
         private System.Windows.Forms.Button btnModify;
-        private System.Windows.Forms.Label lblSuppliers;
+        private System.Windows.Forms.Label lblSupplier;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.Label lblSupply;

@@ -51,7 +51,7 @@ namespace Chromatik
             {
                 Name = tbxName.Text,
                 First_name = tbxFirstName.Text,
-                Phone_number = tbxTelephone.Text,
+                Phone_number = tbxPhone.Text,
                 Email = tbxEmail.Text,
                 Password = tbxPassword.Text
             };
@@ -66,7 +66,7 @@ namespace Chromatik
             }
             else
             {
-                if (User.RegisterUser(u))
+                if (User.registerUser(u))
                 {
                     MessageBox.Show("User registered successfully");
                     this.Close();

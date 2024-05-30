@@ -31,7 +31,7 @@
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.lblType = new System.Windows.Forms.Label();
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
-            this.lblNumber = new System.Windows.Forms.Label();
+            this.lblQuantity = new System.Windows.Forms.Label();
             this.btnAddToCart = new System.Windows.Forms.Button();
             this.lblSupply = new System.Windows.Forms.Label();
             this.cmbSupply = new System.Windows.Forms.ComboBox();
@@ -50,7 +50,7 @@
             // lblType
             // 
             this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(69, 37);
+            this.lblType.Location = new System.Drawing.Point(69, 42);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(37, 13);
             this.lblType.TabIndex = 1;
@@ -78,14 +78,14 @@
             0,
             0});
             // 
-            // lblNumber
+            // lblQuantity
             // 
-            this.lblNumber.AutoSize = true;
-            this.lblNumber.Location = new System.Drawing.Point(68, 151);
-            this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(50, 13);
-            this.lblNumber.TabIndex = 3;
-            this.lblNumber.Text = "Number :";
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point(69, 151);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(55, 13);
+            this.lblQuantity.TabIndex = 3;
+            this.lblQuantity.Text = "Quantity : ";
             // 
             // btnAddToCart
             // 
@@ -100,7 +100,7 @@
             // lblSupply
             // 
             this.lblSupply.AutoSize = true;
-            this.lblSupply.Location = new System.Drawing.Point(69, 88);
+            this.lblSupply.Location = new System.Drawing.Point(69, 93);
             this.lblSupply.Name = "lblSupply";
             this.lblSupply.Size = new System.Drawing.Size(45, 13);
             this.lblSupply.TabIndex = 6;
@@ -124,7 +124,7 @@
             this.Controls.Add(this.lblSupply);
             this.Controls.Add(this.cmbSupply);
             this.Controls.Add(this.btnAddToCart);
-            this.Controls.Add(this.lblNumber);
+            this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.nudQuantity);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.cmbType);
@@ -144,7 +144,7 @@
         private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.NumericUpDown nudQuantity;
-        private System.Windows.Forms.Label lblNumber;
+        private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Button btnAddToCart;
         private System.Windows.Forms.Label lblSupply;
         private System.Windows.Forms.ComboBox cmbSupply;

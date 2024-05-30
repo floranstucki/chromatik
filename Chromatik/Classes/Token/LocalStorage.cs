@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Chromatik.Classes.Token
+﻿namespace Chromatik.Classes.Token
 {
     public static class Storage
     {
@@ -14,7 +8,6 @@ namespace Chromatik.Classes.Token
         {
             Storage.token = token;
         }
-
         public static string getToken()
         {
             return token;

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lblDetails = new System.Windows.Forms.Label();
-            this.tbxFourniture = new System.Windows.Forms.TextBox();
             this.btnFavorites = new System.Windows.Forms.Button();
+            this.lvwStockDetails = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // lblDetails
@@ -43,19 +43,9 @@
             this.lblDetails.TabIndex = 0;
             this.lblDetails.Text = "Stock Details";
             // 
-            // tbxFourniture
-            // 
-            this.tbxFourniture.Location = new System.Drawing.Point(183, 149);
-            this.tbxFourniture.Multiline = true;
-            this.tbxFourniture.Name = "tbxFourniture";
-            this.tbxFourniture.ReadOnly = true;
-            this.tbxFourniture.Size = new System.Drawing.Size(401, 252);
-            this.tbxFourniture.TabIndex = 3;
-            this.tbxFourniture.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btnFavorites
             // 
-            this.btnFavorites.Location = new System.Drawing.Point(446, 120);
+            this.btnFavorites.Location = new System.Drawing.Point(412, 119);
             this.btnFavorites.Name = "btnFavorites";
             this.btnFavorites.Size = new System.Drawing.Size(138, 23);
             this.btnFavorites.TabIndex = 4;
@@ -63,13 +53,22 @@
             this.btnFavorites.UseVisualStyleBackColor = true;
             this.btnFavorites.Click += new System.EventHandler(this.btnFavorites_Click);
             // 
+            // lvwStockDetails
+            // 
+            this.lvwStockDetails.HideSelection = false;
+            this.lvwStockDetails.Location = new System.Drawing.Point(75, 148);
+            this.lvwStockDetails.Name = "lvwStockDetails";
+            this.lvwStockDetails.Size = new System.Drawing.Size(475, 131);
+            this.lvwStockDetails.TabIndex = 6;
+            this.lvwStockDetails.UseCompatibleStateImageBehavior = false;
+            // 
             // frmStockDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(591, 346);
+            this.Controls.Add(this.lvwStockDetails);
             this.Controls.Add(this.btnFavorites);
-            this.Controls.Add(this.tbxFourniture);
             this.Controls.Add(this.lblDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -84,7 +83,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblDetails;
-        private System.Windows.Forms.TextBox tbxFourniture;
         private System.Windows.Forms.Button btnFavorites;
+        private System.Windows.Forms.ListView lvwStockDetails;
     }
 }

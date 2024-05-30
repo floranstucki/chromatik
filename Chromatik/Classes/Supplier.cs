@@ -1,15 +1,12 @@
 ﻿using Chromatik.Classes.Token;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
-using Newtonsoft.Json;
-using System.Collections;
+using System.Windows.Forms;
 
 namespace Chromatik.Classes
 {
@@ -49,7 +46,7 @@ namespace Chromatik.Classes
             return $"Supplier_id : {supplier_id}, Name : {name}, Address : {address}, Phone_number : {phone_number}, Npa : {npa}, City : {city}, Email : {email}";
         }
 
-        public static List<Supplier> LoadSuppliers()
+        public static List<Supplier> loadSuppliers()
         {
             try
             {
@@ -81,7 +78,7 @@ namespace Chromatik.Classes
             }
         }
 
-        public static Supplier SupplierById(int id)
+        public static Supplier loadSupplierById(int id)
         {
             IEnumerable<Supplier> supplier = null;
             HttpClient client = new HttpClient();
@@ -103,7 +100,7 @@ namespace Chromatik.Classes
 
             return null;
         }
-        public static bool AddSupplier(Supplier supplier)
+        public static bool storeSupplier(Supplier supplier)
         {
             try
             {

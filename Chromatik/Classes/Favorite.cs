@@ -1,14 +1,12 @@
 ﻿using Chromatik.Classes.Token;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
-using Newtonsoft.Json;
+using System.Windows.Forms;
 
 namespace Chromatik.Classes
 {
@@ -17,13 +15,14 @@ namespace Chromatik.Classes
         private int id;
         private int user_id;
         private int stock_id;
+        private DateTime created_at;
 
         public int User_id { get => user_id; set => user_id = value; }
         public int Stock_id { get => stock_id; set => stock_id = value; }
         public int Id { get => id; set => id = value; }
-        public DateTime created_at { get; set; }
+        public DateTime Created_at { get => created_at; set => created_at = value; }
 
-        public static List<Favorite> LoadFavoritesByUser()
+        public static List<Favorite> loadFavoritesByUser()
         {
 
             try
@@ -55,7 +54,7 @@ namespace Chromatik.Classes
                 return null;
             }
         }
-        public static bool AddFavorite(int id)
+        public static bool storeFavorite(int id)
         {
             try
             {
@@ -86,7 +85,7 @@ namespace Chromatik.Classes
 
         }
 
-        public static bool DeleteFavoriteById(int id) {
+        public static bool deleteFavoriteById(int id) {
             try
             {
                 HttpClient client = new HttpClient();

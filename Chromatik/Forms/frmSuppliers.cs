@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Chromatik.Classes;
+using System;
 using System.Windows.Forms;
-using Chromatik.Classes;
-using Chromatik.Classes.Token;
-using Newtonsoft.Json;
-using System.Net.Http.Json;
 
 namespace Chromatik.Forms
 {
@@ -35,8 +23,8 @@ namespace Chromatik.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Supplier supplier = new Supplier(tbxSupplier.Text, tbxAddress.Text, tbPhoneNumber.Text, tbxNPA.Text, tbxCity.Text, tbxEmail.Text);
-            var data = Supplier.AddSupplier(supplier);
+            Supplier supplier = new Supplier(tbxSupplier.Text, tbxAddress.Text, tbPhone.Text, tbxNPA.Text, tbxCity.Text, tbxEmail.Text);
+            var data = Supplier.storeSupplier(supplier);
             if (data)
             {
                 MessageBox.Show("Supplier added successfully", "Success !", MessageBoxButtons.OK, MessageBoxIcon.Information);

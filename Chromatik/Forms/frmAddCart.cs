@@ -16,11 +16,11 @@ namespace Chromatik
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-            Stock stock = Stock.LoadStock().Find(s => s.Supply == cmbSupply.Text);
-            Cart cart = Cart.LoadCart().Find(c => c.Stock_id == stock.Stock_id);
+            Stock stock = Stock.loadStock().Find(s => s.Supply == cmbSupply.Text);
+            Cart cart = Cart.loadCarts().Find(c => c.Stock_id == stock.Stock_id);
             if (cart == null)
             {
-                if (Cart.AddToCart(stock.Stock_id, (int)nudQuantity.Value))
+                if (Cart.storeCart(stock.Stock_id, (int)nudQuantity.Value))
                 {
                     MessageBox.Show("Added to cart","Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -31,7 +31,7 @@ namespace Chromatik
             }
             else
             {
-                if (Cart.UpdateCart(cart.Cart_id, (int)nudQuantity.Value))
+                if (Cart.updateCart(cart.Cart_id, (int)nudQuantity.Value))
                 {
                     MessageBox.Show("Updated cart", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -44,7 +44,7 @@ namespace Chromatik
 
         private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Stock> stocks = Stock.LoadStock().FindAll(x => x.Type == cmbType.Text);
+            List<Stock> stocks = Stock.loadStock().FindAll(x => x.Type == cmbType.Text);
             cmbSupply.Items.Clear();
             foreach (Stock stock in stocks)
             {
@@ -54,7 +54,7 @@ namespace Chromatik
 
         private void addType()
         {
-            List<Stock> stocks = Stock.LoadStock();
+            List<Stock> stocks = Stock.loadStock();
             foreach (Stock stock in stocks)
             {
                 if (!cmbType.Items.Contains(stock.Type))
@@ -66,7 +66,7 @@ namespace Chromatik
 
         private void cmbSupply_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Stock stock = Stock.LoadStock().Find(s => s.Supply == cmbSupply.Text);
+            Stock stock = Stock.loadStock().Find(s => s.Supply == cmbSupply.Text);
             nudQuantity.Maximum = stock.Quantity;
         }
     }

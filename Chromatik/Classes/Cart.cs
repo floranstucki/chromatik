@@ -3,12 +3,10 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Windows.Forms;
 
 namespace Chromatik.Classes
 {
@@ -16,16 +14,16 @@ namespace Chromatik.Classes
     {
         private int cart_id;
         private int user_id;
-        private int product_id;
+        private int stock_id;
         private int quantity;
 
-        public int User_id { get; set; }
-        public int Stock_id { get; set; }
-        public int Quantity { get; set; }
-        public int Cart_id { get; set; }
+        public int User_id { get => user_id; set => user_id = value; }
+        public int Stock_id { get => stock_id; set => stock_id = value; }
+        public int Quantity { get => quantity; set => quantity = value; }
+        public int Cart_id { get => cart_id; set => cart_id = value; }
 
         public Cart() { }
-        public static List<Cart> LoadCart()
+        public static List<Cart> loadCarts()
         {
 
             try
@@ -57,7 +55,7 @@ namespace Chromatik.Classes
         }
 
 
-        public static bool AddToCart(int stockId, int quantites) {
+        public static bool storeCart(int stockId, int quantites) {
             try
             {
                 HttpClient client = new HttpClient();
@@ -90,8 +88,8 @@ namespace Chromatik.Classes
         }
 
 
-        public static bool UpdateCart(int id, int quantites) {
-            Cart cart = LoadCart().Find(s => s.Cart_id == id);
+        public static bool updateCart(int id, int quantites) {
+            Cart cart = loadCarts().Find(s => s.Cart_id == id);
             try
             {
                 HttpClient client = new HttpClient();
@@ -121,7 +119,7 @@ namespace Chromatik.Classes
                 return false;
             }
         }
-        public static bool deleteFromCart(int stockid)
+        public static bool deleteCart(int stockid)
         {
             try
             {

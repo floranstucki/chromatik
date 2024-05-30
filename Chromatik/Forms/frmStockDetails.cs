@@ -1,19 +1,7 @@
 ﻿using Chromatik.Classes;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Chromatik.Classes.Token;
-using System.Collections;
-using System.Net.Http.Json;
 
 namespace Chromatik.Forms
 {
@@ -24,7 +12,8 @@ namespace Chromatik.Forms
         {
             InitializeComponent();
             this.stock_id = _stock_id;
-            tbxFourniture.Text = Stock.LoadStockById(stock_id).ToString();
+            initializeListView();
+            fillListView();
             checkFavorite();
         }
 
@@ -32,10 +21,10 @@ namespace Chromatik.Forms
         private void btnFavorites_Click(object sender, EventArgs e)
         {
             int id = stock_id;
-            if(btnFavorites.Text == "Delete from your favorites")
+            if (btnFavorites.Text == "Delete from your favorites")
             {
-                
-                if (Favorite.DeleteFavoriteById(id))
+
+                if (Favorite.deleteFavoriteById(id))
                 {
                     MessageBox.Show("Stock deleted from your favorites", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnFavorites.Text = "Add to your favorites";
@@ -46,9 +35,10 @@ namespace Chromatik.Forms
                 }
                 return;
             }
-            else { 
-                
-                if (Favorite.AddFavorite(id))
+            else
+            {
+
+                if (Favorite.storeFavorite(id))
                 {
                     MessageBox.Show("Stock added to your favorites", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnFavorites.Text = "Delete from your favorites";
@@ -60,8 +50,9 @@ namespace Chromatik.Forms
             }
         }
 
-        private void checkFavorite() { 
-            List<Favorite> favorites = Favorite.LoadFavoritesByUser();
+        private void checkFavorite()
+        {
+            List<Favorite> favorites = Favorite.loadFavoritesByUser();
             if (favorites != null)
             {
                 foreach (Favorite fav in favorites)
@@ -72,6 +63,35 @@ namespace Chromatik.Forms
                     }
                 }
             }
-          }
+        }
+        private void initializeListView()
+        {
+            // Configurez les colonnes du ListView
+
+            lvwStockDetails.Columns.Add("Supply", -2, HorizontalAlignment.Left);
+            lvwStockDetails.Columns.Add("Brand", -2, HorizontalAlignment.Left);
+            lvwStockDetails.Columns.Add("Type", -2, HorizontalAlignment.Left);
+            lvwStockDetails.Columns.Add("Unit Price", -2, HorizontalAlignment.Left);
+            lvwStockDetails.Columns.Add("Quantity", -2, HorizontalAlignment.Left);
+            lvwStockDetails.Columns.Add("Supplier", -2, HorizontalAlignment.Left);
+            lvwStockDetails.View = View.Details;
+
+        }
+
+        private void fillListView() {
+            Stock stock = Stock.loadStockById(stock_id);
+            if (stock != null)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = stock.Supply;
+                item.SubItems.Add(stock.Brand);
+                item.SubItems.Add(stock.Type);
+                item.SubItems.Add(stock.Price.ToString());
+                item.SubItems.Add(stock.Quantity.ToString());
+                item.SubItems.Add(Supplier.loadSupplierById(stock.Supplier_id).Name);
+                lvwStockDetails.Items.Add(item);
+            }
+
+        }
     }
 }

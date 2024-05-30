@@ -3,7 +3,6 @@ using Chromatik.Classes.Token;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -46,7 +45,7 @@ namespace Chromatik
             this.role = role;
         }
 
-        private static List<User> loadUsers() {
+        public static List<User> loadUsers() {
             try
             {
                 IEnumerable<User> users = null;
@@ -77,7 +76,7 @@ namespace Chromatik
                 return null;
             }
         }
-        public static bool RegisterUser(User user)
+        public static bool registerUser(User user)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://127.0.0.1:8000/api/");
@@ -104,7 +103,7 @@ namespace Chromatik
             }
         }
 
-        public static bool LoginUser(string emailUser, string passwordUser) {
+        public static bool oginUser(string emailUser, string passwordUser) {
 
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://127.0.0.1:8000/api/");
@@ -165,6 +164,38 @@ namespace Chromatik
                 }
             }
             return false;
+        }
+
+        public static bool updateUser(User user)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("http://localhost:8000/api/");
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {Storage.token}");
+
+                var consumeApi = client.PutAsJsonAsync($"users/{Storage.getUser().Id}", new { 
+                    name = user.Name,
+                    first_name = user.First_name,
+                    phone_number = user.Phone_number,
+                    email = user.Email,
+                    password = user.Password
+                });
+                consumeApi.Wait();
+                var data = consumeApi.Result;
+                if (data.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
 
         public static List<Order> loadOrderByUser() {

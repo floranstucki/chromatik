@@ -1,14 +1,7 @@
 ﻿using Chromatik.Classes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Chromatik.Forms
 {
@@ -19,7 +12,7 @@ namespace Chromatik.Forms
             InitializeComponent();
         }
 
-        private void Clear()
+        private void clear()
         {
             tbxName.Text = "";
             tbxBrand.Text = "";
@@ -31,9 +24,9 @@ namespace Chromatik.Forms
 
         private void btnAddStock_Click(object sender, EventArgs e)
         {
-            if (Stock.AddStock(new Stock(tbxName.Text, tbxBrand.Text, cmbSupplyType.Text, Convert.ToDouble(nudPrice.Value), Convert.ToInt32(nudNumber.Value), Supplier.SupplierById(cmbSupplier.SelectedIndex + 1).Supplier_id))) { 
+            if (Stock.storeStock(new Stock(tbxName.Text, tbxBrand.Text, cmbSupplyType.Text, Convert.ToDouble(nudPrice.Value), Convert.ToInt32(nudNumber.Value), Supplier.loadSupplierById(cmbSupplier.SelectedIndex + 1).Supplier_id))) { 
                 MessageBox.Show("Stock added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Clear();
+                clear();
             }
             else
             {
@@ -49,7 +42,7 @@ namespace Chromatik.Forms
             cmbSupplyType.Items.Add("Paint");
             cmbSupplyType.Items.Add("Canvas");
             cmbSupplyType.Items.Add("Brush");
-            List<Supplier> supplier = Supplier.LoadSuppliers();
+            List<Supplier> supplier = Supplier.loadSuppliers();
             foreach (Supplier suppliers in supplier)
             {
                 cmbSupplier.Items.Add(suppliers.Name);

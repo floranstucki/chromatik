@@ -11,8 +11,8 @@ namespace Chromatik.Forms
         {
             InitializeComponent();
             InitializeDataGridView();
-            LoadFavoritesByUser();
-            AutoResizeColumns(dgvFavorites);
+            loadFavoritesByUser();
+            autoResizeColumns(dgvFavorites);
         }
 
         private void InitializeDataGridView()
@@ -30,18 +30,16 @@ namespace Chromatik.Forms
             dgvFavorites.Columns.Add(deleteLinkColumn);
         }
 
- 
-
-        private void LoadFavoritesByUser()
+        private void loadFavoritesByUser()
         {
-            List<Favorite> list = Favorite.LoadFavoritesByUser();
+            List<Favorite> list = Favorite.loadFavoritesByUser();
 
             if (list != null)
             {
                 foreach (Favorite fav in list)
                 {
-                    Stock stock = Stock.LoadStockById(fav.Stock_id);
-                    AddElementToDataGridView(stock.Type, stock.Supply, fav.created_at, fav.Stock_id);
+                    Stock stock = Stock.loadStockById(fav.Stock_id);
+                    addElementToDataGridView(stock.Type, stock.Supply, fav.Created_at, fav.Stock_id);
                 }
             }
             else
@@ -50,13 +48,13 @@ namespace Chromatik.Forms
             }
         }
 
-        private void AddElementToDataGridView(string typeFourniture, string nomFourniture, DateTime dateMiseEnFavori, int favoriteId)
+        private void addElementToDataGridView(string typeFourniture, string nomFourniture, DateTime dateMiseEnFavori, int favoriteId)
         {
             int rowIndex = dgvFavorites.Rows.Add(typeFourniture, nomFourniture, dateMiseEnFavori.ToString("dd/MM/yyyy"));
             dgvFavorites.Rows[rowIndex].Tag = favoriteId; // Utiliser Tag pour stocker l'ID du favori
         }
 
-        private void AutoResizeColumns(DataGridView dataGridView)
+        private void autoResizeColumns(DataGridView dataGridView)
         {
             int availableWidth = dataGridView.ClientSize.Width;
 
@@ -79,7 +77,7 @@ namespace Chromatik.Forms
 
                 if (e.ColumnIndex == dgvFavorites.Columns["Delete"].Index)
                 {
-                    if (Favorite.DeleteFavoriteById(favoriteId))
+                    if (Favorite.deleteFavoriteById(favoriteId))
                     {
                         MessageBox.Show("Favorite deleted", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvFavorites.Rows.RemoveAt(e.RowIndex);

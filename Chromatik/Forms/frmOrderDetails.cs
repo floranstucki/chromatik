@@ -1,19 +1,6 @@
 ﻿using Chromatik.Classes;
-using Chromatik.Classes.Token;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Chromatik.Forms
 {
@@ -24,12 +11,12 @@ namespace Chromatik.Forms
         {
             InitializeComponent();
             _noCommand = no;
-            InitializeListView();
-            LoadOrders();
+            initializeListView();
+            loadOrders();
             resizeLVW();
         }
 
-        private void InitializeListView()
+        private void initializeListView()
         {
             // Configurez les colonnes du ListView
 
@@ -62,12 +49,13 @@ namespace Chromatik.Forms
             }
 
         }
-        public void LoadOrders()
+        public void loadOrders()
         {
             Order order = Order.loadOrderById(_noCommand);
             lblDetails.Text += " n°" + order.Order_id;
             lblDate.Text += order.Date.ToString("dd.MM.yyyy");
             Stock.getStockFromCommand(lvwOrder, order.Command);
+
             lblPrice.Text += order.Total_amount + " CHF";
         }
 

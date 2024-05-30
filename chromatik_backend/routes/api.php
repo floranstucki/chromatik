@@ -68,7 +68,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
     
     Route::get('/users/{id}', [UserController::class, 'show']);
-    Route::put('/users/{id}', [UserController::class, 'update']);
     Route::get('/users/{id}/orders', [UserController::class, 'showOrderByUserId']);
     /**
      * The user must have the permission to delete a user
@@ -76,6 +75,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::group(['middleware' => ['can:delete user']], function () {
         Route::delete('/users/{id}', [UserController::class, 'destroy']);
     });
+    Route::put('/users/{id}', [UserController::class, 'update']);
     Route::get('/users/{id}/favorites',[UserController::class, 'showFav']); 
     Route::get('/users/{id}/carts',[CartController::class,'findByUserId']); 
     Route::delete('/users/{id}/carts/{stockid}',[CartController::class,'destroy']); 

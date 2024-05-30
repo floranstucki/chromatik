@@ -13,7 +13,7 @@ namespace Chromatik
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (User.LoginUser(tbxEmail.Text, tbxPassword.Text))
+            if (User.oginUser(tbxEmail.Text, tbxPassword.Text))
             {
                 Close();
             }
@@ -30,7 +30,7 @@ namespace Chromatik
         private void llbForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             
-            frmForgotPassword frmFP = new frmForgotPassword(tbxEmail.Text);
+            frmChangePassword frmFP = new frmChangePassword();
             frmFP.ShowDialog();
         }
     }

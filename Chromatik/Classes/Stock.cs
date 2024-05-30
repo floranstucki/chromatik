@@ -3,12 +3,10 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Windows.Forms;
 
 namespace Chromatik.Classes
 {
@@ -30,6 +28,7 @@ namespace Chromatik.Classes
         public double Price { get => price; set => price = value; }
         public int Quantity { get => quantity; set => quantity = value; }
         public int Supplier_id { get => supplier_id; set => supplier_id = value; }
+        public DateTime Date { get => date; set => date= value; }
 
         public Stock() { }
 
@@ -47,7 +46,7 @@ namespace Chromatik.Classes
             return $"Stock_id : {stock_id}, Supply : {supply}, Brand : {brand}, Type : {type}, Price : {price}, Quantity : {quantity}, Supplier_id : {supplier_id}";
         }
 
-        public static List<Stock> LoadStock()
+        public static List<Stock> loadStock()
         {
             try
             {
@@ -79,7 +78,7 @@ namespace Chromatik.Classes
                 return null;
             }
         }
-        public static Stock LoadStockById(int stock_id)
+        public static Stock loadStockById(int stock_id)
         {
             try
             {
@@ -114,7 +113,7 @@ namespace Chromatik.Classes
             }
         }
 
-        public static bool AddStock(Stock stock)
+        public static bool storeStock(Stock stock)
         {
             try
             {
@@ -149,7 +148,7 @@ namespace Chromatik.Classes
         }
 
 
-        public static bool UpdateStockQuantity(int id, int quantity)
+        public static bool updateStockQuantity(int id, int quantity)
         {
             try
             {
@@ -193,7 +192,7 @@ namespace Chromatik.Classes
             }
         }
 
-        public static bool UpdateStock(int id, Stock stock)
+        public static bool updateStock(int id, Stock stock)
         {
             try
             {
@@ -226,7 +225,7 @@ namespace Chromatik.Classes
             }
         }
 
-        public static bool DeleteStock(int stock_id)
+        public static bool deleteStock(int stock_id)
         {
             try
             {
@@ -261,7 +260,7 @@ namespace Chromatik.Classes
             {
                 foreach (var details in split.command_details)
                 {
-                    Stock stock = Stock.LoadStockById(details.stock_id);
+                    Stock stock = Stock.loadStockById(details.stock_id);
                     double price = stock.Price * details.quantity;
                     lvw.Items.Add(new ListViewItem(new string[] { stock.Supply, details.quantity.ToString(), stock.Price.ToString() + " CHF", price.ToString() + " CHF" }));
                 }

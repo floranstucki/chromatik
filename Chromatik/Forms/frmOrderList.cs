@@ -1,14 +1,9 @@
 ﻿using Chromatik.Classes;
 using Chromatik.Classes.Token;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Chromatik.Forms
 {
@@ -23,7 +18,7 @@ namespace Chromatik.Forms
             id = Storage.getUser().Id;
             detailCommandeMap = new Dictionary<int, frmOrderDetails>();
 
-            LoadOrders();
+            loadOrders();
             dgvOrder.CellContentClick += dgvCommande_CellContentClick;
             
         }
@@ -52,7 +47,7 @@ namespace Chromatik.Forms
             dgvOrder.Sort(clickedColumn, ListSortDirection.Ascending);
         }
 
-        public void LoadOrders()
+        public void loadOrders()
         {
             List<Order> orders = User.loadOrderByUser();
             if (orders.Count > 0)

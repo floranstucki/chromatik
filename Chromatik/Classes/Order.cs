@@ -1,13 +1,13 @@
 ﻿using Chromatik.Classes.Token;
 using Newtonsoft.Json;
 using System;
-using System.Net.Http.Headers;
-using System.Net.Http;
-using System.Windows.Forms;
-using System.Net.Http.Json;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Windows.Forms;
 
 namespace Chromatik.Classes
 {
@@ -77,15 +77,14 @@ namespace Chromatik.Classes
             catch { return null; }
         }
 
-        public static bool postOrder(DateTime dateOrder, string statusOrder, string commandOrder, double total, int userId)
+        public static bool storeOrder(DateTime dateOrder, string statusOrder, string commandOrder, double total, int userId)
         {
 
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://127.0.0.1:8000/api/");
             string contentType = "application/json";
-            client.DefaultRequestHeaders.Add("Authorization", String.Format("Bearer {0}", Storage.token)); //si on veut ajouter le token dans le header
+            client.DefaultRequestHeaders.Add("Authorization", String.Format("Bearer {0}", Storage.token));
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(contentType));
-            Console.WriteLine(client.BaseAddress + "orders?date=" + dateOrder.ToString("yyyy-MM-dd") + "&status=" + statusOrder + "&command=" + JsonConvert.SerializeObject(commandOrder) + "&total_amount" + total + "&user_id=" + userId);
             var consumeApi = client.PostAsJsonAsync("orders", new
             {
                 date = dateOrder.ToString("yyyy-MM-dd"),

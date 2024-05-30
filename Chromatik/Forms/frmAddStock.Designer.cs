@@ -31,7 +31,7 @@
             this.lblType = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
-            this.lblStock = new System.Windows.Forms.Label();
+            this.lblNumber = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblSupplier = new System.Windows.Forms.Label();
             this.btnAddStock = new System.Windows.Forms.Button();
@@ -72,14 +72,14 @@
             this.lblBrand.TabIndex = 2;
             this.lblBrand.Text = "Brand :";
             // 
-            // lblStock
+            // lblNumber
             // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(451, 202);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(86, 13);
-            this.lblStock.TabIndex = 5;
-            this.lblStock.Text = "Number to add : ";
+            this.lblNumber.AutoSize = true;
+            this.lblNumber.Location = new System.Drawing.Point(451, 202);
+            this.lblNumber.Name = "lblNumber";
+            this.lblNumber.Size = new System.Drawing.Size(86, 13);
+            this.lblNumber.TabIndex = 5;
+            this.lblNumber.Text = "Number to add : ";
             // 
             // lblPrice
             // 
@@ -184,7 +184,7 @@
             this.tbxBrand.Size = new System.Drawing.Size(121, 20);
             this.tbxBrand.TabIndex = 2;
             // 
-            // frmStock
+            // frmAddStock
             // 
             this.AcceptButton = this.btnAddStock;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,7 +198,7 @@
             this.Controls.Add(this.cmbSupplyType);
             this.Controls.Add(this.btnAddStock);
             this.Controls.Add(this.lblSupplier);
-            this.Controls.Add(this.lblStock);
+            this.Controls.Add(this.lblNumber);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblBrand);
             this.Controls.Add(this.lblName);
@@ -206,7 +206,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmStock";
+            this.Name = "frmAddStock";
             this.Text = "Stock to Add";
             this.Load += new System.EventHandler(this.frmStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).EndInit();
@@ -221,7 +221,7 @@
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblBrand;
-        private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.Label lblNumber;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblSupplier;
         private System.Windows.Forms.Button btnAddStock;

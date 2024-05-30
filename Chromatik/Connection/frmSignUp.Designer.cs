@@ -31,12 +31,12 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.lblConfirm = new System.Windows.Forms.Label();
-            this.lblTelephone = new System.Windows.Forms.Label();
+            this.lblConfirmation = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tbxName = new System.Windows.Forms.TextBox();
             this.tbxFirstName = new System.Windows.Forms.TextBox();
-            this.tbxTelephone = new System.Windows.Forms.TextBox();
+            this.tbxPhone = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.tbxConfirmation = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
@@ -71,23 +71,23 @@
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password :";
             // 
-            // lblConfirm
+            // lblConfirmation
             // 
-            this.lblConfirm.AutoSize = true;
-            this.lblConfirm.Location = new System.Drawing.Point(341, 143);
-            this.lblConfirm.Name = "lblConfirm";
-            this.lblConfirm.Size = new System.Drawing.Size(97, 13);
-            this.lblConfirm.TabIndex = 4;
-            this.lblConfirm.Text = "Confirm Password :";
+            this.lblConfirmation.AutoSize = true;
+            this.lblConfirmation.Location = new System.Drawing.Point(341, 143);
+            this.lblConfirmation.Name = "lblConfirmation";
+            this.lblConfirmation.Size = new System.Drawing.Size(97, 13);
+            this.lblConfirmation.TabIndex = 4;
+            this.lblConfirmation.Text = "Confirm Password :";
             // 
-            // lblTelephone
+            // lblPhone
             // 
-            this.lblTelephone.AutoSize = true;
-            this.lblTelephone.Location = new System.Drawing.Point(12, 143);
-            this.lblTelephone.Name = "lblTelephone";
-            this.lblTelephone.Size = new System.Drawing.Size(104, 13);
-            this.lblTelephone.TabIndex = 5;
-            this.lblTelephone.Text = "Telephone Number :";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(12, 143);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(104, 13);
+            this.lblPhone.TabIndex = 5;
+            this.lblPhone.Text = "Telephone Number :";
             // 
             // btnSubmit
             // 
@@ -113,14 +113,14 @@
             this.tbxFirstName.Size = new System.Drawing.Size(100, 20);
             this.tbxFirstName.TabIndex = 1;
             // 
-            // tbxTelephone
+            // tbxPhone
             // 
-            this.tbxTelephone.Location = new System.Drawing.Point(144, 136);
-            this.tbxTelephone.MaxLength = 12;
-            this.tbxTelephone.Name = "tbxTelephone";
-            this.tbxTelephone.Size = new System.Drawing.Size(100, 20);
-            this.tbxTelephone.TabIndex = 2;
-            this.tbxTelephone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxTelephone_KeyPress);
+            this.tbxPhone.Location = new System.Drawing.Point(144, 136);
+            this.tbxPhone.MaxLength = 12;
+            this.tbxPhone.Name = "tbxPhone";
+            this.tbxPhone.Size = new System.Drawing.Size(100, 20);
+            this.tbxPhone.TabIndex = 2;
+            this.tbxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxTelephone_KeyPress);
             // 
             // tbxPassword
             // 
@@ -176,12 +176,12 @@
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.tbxConfirmation);
             this.Controls.Add(this.tbxPassword);
-            this.Controls.Add(this.tbxTelephone);
+            this.Controls.Add(this.tbxPhone);
             this.Controls.Add(this.tbxFirstName);
             this.Controls.Add(this.tbxName);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.lblTelephone);
-            this.Controls.Add(this.lblConfirm);
+            this.Controls.Add(this.lblPhone);
+            this.Controls.Add(this.lblConfirmation);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblName);
@@ -200,12 +200,12 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblConfirm;
-        private System.Windows.Forms.Label lblTelephone;
+        private System.Windows.Forms.Label lblConfirmation;
+        private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TextBox tbxName;
         private System.Windows.Forms.TextBox tbxFirstName;
-        private System.Windows.Forms.TextBox tbxTelephone;
+        private System.Windows.Forms.TextBox tbxPhone;
         private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.TextBox tbxConfirmation;
         private System.Windows.Forms.Button btnReset;

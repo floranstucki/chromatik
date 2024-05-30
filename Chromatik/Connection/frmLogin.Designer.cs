@@ -30,14 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblPwd = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.tbxEmail = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.llbForgot = new System.Windows.Forms.LinkLabel();
+            this.picUser = new System.Windows.Forms.PictureBox();
             this.llbSignUp = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEmail
@@ -49,14 +48,14 @@
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email :";
             // 
-            // lblPwd
+            // lblPassword
             // 
-            this.lblPwd.AutoSize = true;
-            this.lblPwd.Location = new System.Drawing.Point(140, 102);
-            this.lblPwd.Name = "lblPwd";
-            this.lblPwd.Size = new System.Drawing.Size(59, 13);
-            this.lblPwd.TabIndex = 5;
-            this.lblPwd.Text = "Password :";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(140, 102);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(59, 13);
+            this.lblPassword.TabIndex = 5;
+            this.lblPassword.Text = "Password :";
             // 
             // tbxEmail
             // 
@@ -77,7 +76,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(216, 221);
+            this.btnLogin.Location = new System.Drawing.Point(247, 217);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(160, 23);
             this.btnLogin.TabIndex = 2;
@@ -85,31 +84,20 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // pictureBox1
+            // picUser
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 95);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // llbForgot
-            // 
-            this.llbForgot.AutoSize = true;
-            this.llbForgot.Location = new System.Drawing.Point(192, 183);
-            this.llbForgot.Name = "llbForgot";
-            this.llbForgot.Size = new System.Drawing.Size(95, 13);
-            this.llbForgot.TabIndex = 3;
-            this.llbForgot.TabStop = true;
-            this.llbForgot.Text = "Forgot Password ?";
-            this.llbForgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbForgot_LinkClicked);
+            this.picUser.Image = ((System.Drawing.Image)(resources.GetObject("picUser.Image")));
+            this.picUser.Location = new System.Drawing.Point(12, 39);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(100, 95);
+            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUser.TabIndex = 5;
+            this.picUser.TabStop = false;
             // 
             // llbSignUp
             // 
             this.llbSignUp.AutoSize = true;
-            this.llbSignUp.Location = new System.Drawing.Point(293, 183);
+            this.llbSignUp.Location = new System.Drawing.Point(265, 153);
             this.llbSignUp.Name = "llbSignUp";
             this.llbSignUp.Size = new System.Drawing.Size(114, 13);
             this.llbSignUp.TabIndex = 6;
@@ -124,12 +112,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 266);
             this.Controls.Add(this.llbSignUp);
-            this.Controls.Add(this.llbForgot);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picUser);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxEmail);
-            this.Controls.Add(this.lblPwd);
+            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -137,7 +124,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,12 +133,11 @@
         #endregion
 
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblPwd;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox tbxEmail;
         private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.LinkLabel llbForgot;
+        private System.Windows.Forms.PictureBox picUser;
         private System.Windows.Forms.LinkLabel llbSignUp;
     }
 }

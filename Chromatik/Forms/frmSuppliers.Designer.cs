@@ -38,7 +38,7 @@
             this.tbxAddress = new System.Windows.Forms.TextBox();
             this.tbxNPA = new System.Windows.Forms.TextBox();
             this.tbxCity = new System.Windows.Forms.TextBox();
-            this.tbPhoneNumber = new System.Windows.Forms.TextBox();
+            this.tbPhone = new System.Windows.Forms.TextBox();
             this.tbxEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -128,13 +128,13 @@
             this.tbxCity.Size = new System.Drawing.Size(144, 20);
             this.tbxCity.TabIndex = 3;
             // 
-            // tbPhoneNumber
+            // tbPhone
             // 
-            this.tbPhoneNumber.Location = new System.Drawing.Point(552, 145);
-            this.tbPhoneNumber.Name = "tbPhoneNumber";
-            this.tbPhoneNumber.Size = new System.Drawing.Size(144, 20);
-            this.tbPhoneNumber.TabIndex = 4;
-            this.tbPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhoneNumber_KeyPress);
+            this.tbPhone.Location = new System.Drawing.Point(552, 145);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(144, 20);
+            this.tbPhone.TabIndex = 4;
+            this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhoneNumber_KeyPress);
             // 
             // tbxEmail
             // 
@@ -161,7 +161,7 @@
             this.ClientSize = new System.Drawing.Size(800, 393);
             this.Controls.Add(this.tbxEmail);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.tbPhoneNumber);
+            this.Controls.Add(this.tbPhone);
             this.Controls.Add(this.tbxCity);
             this.Controls.Add(this.tbxNPA);
             this.Controls.Add(this.tbxAddress);
@@ -194,7 +194,7 @@
         private System.Windows.Forms.TextBox tbxAddress;
         private System.Windows.Forms.TextBox tbxNPA;
         private System.Windows.Forms.TextBox tbxCity;
-        private System.Windows.Forms.TextBox tbPhoneNumber;
+        private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.TextBox tbxEmail;
         private System.Windows.Forms.Label lblEmail;
     }

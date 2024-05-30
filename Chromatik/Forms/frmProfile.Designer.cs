@@ -32,12 +32,13 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblNomModifiable = new System.Windows.Forms.Label();
-            this.lblPrenomModifiable = new System.Windows.Forms.Label();
-            this.lblEmailModifiable = new System.Windows.Forms.Label();
-            this.lblTelephoneModifiable = new System.Windows.Forms.Label();
+            this.lblValueName = new System.Windows.Forms.Label();
+            this.lblValueFirstName = new System.Windows.Forms.Label();
+            this.lblValueEmail = new System.Windows.Forms.Label();
+            this.lblValuePhone = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
-            this.btnModifier = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblProfil
@@ -80,78 +81,89 @@
             this.lblEmail.TabIndex = 3;
             this.lblEmail.Text = "Email :";
             // 
-            // lblNomModifiable
+            // lblValueName
             // 
-            this.lblNomModifiable.AutoSize = true;
-            this.lblNomModifiable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomModifiable.Location = new System.Drawing.Point(404, 131);
-            this.lblNomModifiable.Name = "lblNomModifiable";
-            this.lblNomModifiable.Size = new System.Drawing.Size(51, 21);
-            this.lblNomModifiable.TabIndex = 4;
-            this.lblNomModifiable.Text = "Stucki";
+            this.lblValueName.AutoSize = true;
+            this.lblValueName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValueName.Location = new System.Drawing.Point(404, 131);
+            this.lblValueName.Name = "lblValueName";
+            this.lblValueName.Size = new System.Drawing.Size(51, 21);
+            this.lblValueName.TabIndex = 4;
+            this.lblValueName.Text = "Stucki";
             // 
-            // lblPrenomModifiable
+            // lblValueFirstName
             // 
-            this.lblPrenomModifiable.AutoSize = true;
-            this.lblPrenomModifiable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrenomModifiable.Location = new System.Drawing.Point(404, 175);
-            this.lblPrenomModifiable.Name = "lblPrenomModifiable";
-            this.lblPrenomModifiable.Size = new System.Drawing.Size(54, 21);
-            this.lblPrenomModifiable.TabIndex = 5;
-            this.lblPrenomModifiable.Text = "Floran";
+            this.lblValueFirstName.AutoSize = true;
+            this.lblValueFirstName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValueFirstName.Location = new System.Drawing.Point(404, 175);
+            this.lblValueFirstName.Name = "lblValueFirstName";
+            this.lblValueFirstName.Size = new System.Drawing.Size(54, 21);
+            this.lblValueFirstName.TabIndex = 5;
+            this.lblValueFirstName.Text = "Floran";
             // 
-            // lblEmailModifiable
+            // lblValueEmail
             // 
-            this.lblEmailModifiable.AutoSize = true;
-            this.lblEmailModifiable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailModifiable.Location = new System.Drawing.Point(404, 227);
-            this.lblEmailModifiable.Name = "lblEmailModifiable";
-            this.lblEmailModifiable.Size = new System.Drawing.Size(60, 21);
-            this.lblEmailModifiable.TabIndex = 6;
-            this.lblEmailModifiable.Text = "flo_s98";
+            this.lblValueEmail.AutoSize = true;
+            this.lblValueEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValueEmail.Location = new System.Drawing.Point(404, 227);
+            this.lblValueEmail.Name = "lblValueEmail";
+            this.lblValueEmail.Size = new System.Drawing.Size(60, 21);
+            this.lblValueEmail.TabIndex = 6;
+            this.lblValueEmail.Text = "flo_s98";
             // 
-            // lblTelephoneModifiable
+            // lblValuePhone
             // 
-            this.lblTelephoneModifiable.AutoSize = true;
-            this.lblTelephoneModifiable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelephoneModifiable.Location = new System.Drawing.Point(404, 283);
-            this.lblTelephoneModifiable.Name = "lblTelephoneModifiable";
-            this.lblTelephoneModifiable.Size = new System.Drawing.Size(136, 21);
-            this.lblTelephoneModifiable.TabIndex = 8;
-            this.lblTelephoneModifiable.Text = "+41 79 422 51 88";
+            this.lblValuePhone.AutoSize = true;
+            this.lblValuePhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValuePhone.Location = new System.Drawing.Point(404, 274);
+            this.lblValuePhone.Name = "lblValuePhone";
+            this.lblValuePhone.Size = new System.Drawing.Size(136, 21);
+            this.lblValuePhone.TabIndex = 8;
+            this.lblValuePhone.Text = "+41 79 422 51 88";
             // 
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.Location = new System.Drawing.Point(220, 283);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(220, 274);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(123, 21);
             this.lblPhoneNumber.TabIndex = 7;
             this.lblPhoneNumber.Text = "Phone Number :";
             // 
-            // btnModifier
+            // btnModify
             // 
-            this.btnModifier.Location = new System.Drawing.Point(224, 347);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(316, 23);
-            this.btnModifier.TabIndex = 9;
-            this.btnModifier.Text = "Modifier your Informations";
-            this.btnModifier.UseVisualStyleBackColor = true;
-            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            this.btnModify.Location = new System.Drawing.Point(224, 393);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(316, 23);
+            this.btnModify.TabIndex = 9;
+            this.btnModify.Text = "Modify your Informations";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModifier_Click);
+            // 
+            // btnChange
+            // 
+            this.btnChange.Location = new System.Drawing.Point(224, 331);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(316, 23);
+            this.btnChange.TabIndex = 10;
+            this.btnChange.Text = "Change password";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // frmProfile
             // 
-            this.AcceptButton = this.btnModifier;
+            this.AcceptButton = this.btnModify;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnModifier);
-            this.Controls.Add(this.lblTelephoneModifiable);
+            this.Controls.Add(this.btnChange);
+            this.Controls.Add(this.btnModify);
+            this.Controls.Add(this.lblValuePhone);
             this.Controls.Add(this.lblPhoneNumber);
-            this.Controls.Add(this.lblEmailModifiable);
-            this.Controls.Add(this.lblPrenomModifiable);
-            this.Controls.Add(this.lblNomModifiable);
+            this.Controls.Add(this.lblValueEmail);
+            this.Controls.Add(this.lblValueFirstName);
+            this.Controls.Add(this.lblValueName);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblName);
@@ -172,11 +184,12 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblNomModifiable;
-        private System.Windows.Forms.Label lblPrenomModifiable;
-        private System.Windows.Forms.Label lblEmailModifiable;
-        private System.Windows.Forms.Label lblTelephoneModifiable;
+        private System.Windows.Forms.Label lblValueName;
+        private System.Windows.Forms.Label lblValueFirstName;
+        private System.Windows.Forms.Label lblValueEmail;
+        private System.Windows.Forms.Label lblValuePhone;
         private System.Windows.Forms.Label lblPhoneNumber;
-        private System.Windows.Forms.Button btnModifier;
+        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Button btnChange;
     }
 }

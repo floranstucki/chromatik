@@ -56,9 +56,9 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(189, 424);
+            this.btnGenerate.Location = new System.Drawing.Point(189, 415);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(401, 23);
+            this.btnGenerate.Size = new System.Drawing.Size(475, 23);
             this.btnGenerate.TabIndex = 3;
             this.btnGenerate.Text = "Generate PDF of the order";
             this.btnGenerate.UseVisualStyleBackColor = true;
@@ -77,7 +77,7 @@
             // lvwOrder
             // 
             this.lvwOrder.HideSelection = false;
-            this.lvwOrder.Location = new System.Drawing.Point(189, 142);
+            this.lvwOrder.Location = new System.Drawing.Point(189, 170);
             this.lvwOrder.Name = "lvwOrder";
             this.lvwOrder.Size = new System.Drawing.Size(475, 131);
             this.lvwOrder.TabIndex = 5;
@@ -85,6 +85,7 @@
             // 
             // frmOrderDetails
             // 
+            this.AcceptButton = this.btnGenerate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);

@@ -1,16 +1,12 @@
 ﻿using Chromatik.Classes;
-using Newtonsoft.Json;
+using Chromatik.Classes.Token;
 using System;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
-using System.Net.Http;
 using System.Windows.Forms;
-using Chromatik.Classes.Token;
-using System.Linq;
 
 namespace Chromatik.Forms
 {
-    
+
     public partial class frmAllStock : Form
     {
         private Dictionary<int, frmStockDetails> detailCommandMap;
@@ -21,7 +17,7 @@ namespace Chromatik.Forms
             InitializeComponent();
             detailCommandMap = new Dictionary<int, frmStockDetails>();
             updateStockMap = new Dictionary<int, frmUpdateStock>();
-            LoadStock();
+            loadStock();
     
         }
         private void InitializeDataGridView()
@@ -35,7 +31,7 @@ namespace Chromatik.Forms
             if (Storage.getUser().Role == "manage")
             {
                 DataGridViewLinkColumn updateColumn = new DataGridViewLinkColumn();
-                updateColumn.Name = "UpdateStock";
+                updateColumn.Name = "updateStock";
                 updateColumn.HeaderText = "Update";
                 updateColumn.Text = "Update Stock";
                 updateColumn.UseColumnTextForLinkValue = true;
@@ -43,7 +39,7 @@ namespace Chromatik.Forms
 
 
                 DataGridViewLinkColumn deleteColumn = new DataGridViewLinkColumn();
-                deleteColumn.Name = "DeleteStock";
+                deleteColumn.Name = "deleteStock";
                 deleteColumn.HeaderText = "Delete";
                 deleteColumn.Text = "Delete Stock";
                 deleteColumn.UseColumnTextForLinkValue = true;
@@ -74,7 +70,7 @@ namespace Chromatik.Forms
                     detailCommandeForm.Show();
                 }
                 // Gérer le clic sur le lien "Mettre à jour"
-                else if (e.ColumnIndex == dgvStock.Columns["UpdateStock"].Index)
+                else if (e.ColumnIndex == dgvStock.Columns["updateStock"].Index)
                 {
                     frmUpdateStock updateStockForm;
                     if (!updateStockMap.TryGetValue(stockId, out updateStockForm) || updateStockForm.IsDisposed)
@@ -86,12 +82,12 @@ namespace Chromatik.Forms
 
                     updateStockForm.Show();
                 }
-                else if (e.ColumnIndex == dgvStock.Columns["DeleteStock"].Index)
+                else if (e.ColumnIndex == dgvStock.Columns["deleteStock"].Index)
                 {
-                    if (Stock.DeleteStock(stockId))
+                    if (Stock.deleteStock(stockId))
                     {
                         MessageBox.Show("Stock Deleted","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                        LoadStock();
+                        loadStock();
                     }
                     else
                     {
@@ -103,11 +99,11 @@ namespace Chromatik.Forms
 
         private void frmUpdateStock_FormClosed(object sender, FormClosedEventArgs e)
         {
-            LoadStock();
+            loadStock();
         }
-        public void LoadStock()
+        public void loadStock()
         {
-            List<Stock> stock = Stock.LoadStock();
+            List<Stock> stock = Stock.loadStock();
             if (stock != null)
             {
                 dgvStock.DataSource = stock;
